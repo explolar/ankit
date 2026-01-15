@@ -3,427 +3,484 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankit Kumar | M.Tech IIT Kharagpur</title>
+    <title>Ankit Kumar | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            /* IIT Kharagpur Blue & Agriculture Green */
+            /* Palette */
             --primary: #003366; 
+            --primary-light: #004d99;
             --secondary: #2E7D32; 
-            --accent: #FF9800; /* For highlights like GATE rank */
-            --bg-light: #f8f9fa;
-            --text-dark: #1a1a1a;
-            --text-gray: #555;
-            --card-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            --radius: 12px;
+            --secondary-light: #4caf50;
+            --accent: #FF9800; 
+            --bg-body: #f4f7f6;
+            --bg-card: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666;
+            --radius: 16px;
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
         }
+
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
+            color: var(--text-main);
             margin: 0;
-            background-color: var(--bg-light);
+            background-color: var(--bg-body);
+            overflow-x: hidden;
         }
 
-        /* TYPOGRAPHY */
-        h1, h2, h3, h4 { color: var(--primary); margin: 0 0 10px 0; }
-        h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -1px; }
-        h2 { font-size: 1.8rem; border-left: 5px solid var(--secondary); padding-left: 15px; margin: 50px 0 25px 0; }
-        p { color: var(--text-gray); margin-bottom: 15px; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        /* --- NAVIGATION --- */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--primary); letter-spacing: -0.5px; }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { 
+            font-size: 0.95rem; font-weight: 600; color: var(--text-muted); 
+            position: relative;
+            text-decoration: none;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -4px; left: 0; background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-
-        /* HEADER / HERO */
+        /* --- HERO SECTION --- */
         header {
-            background: white;
-            padding: 60px 0;
-            border-bottom: 1px solid #eee;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
         }
-        .header-grid {
+        header::before {
+            content: ''; position: absolute; top: -100px; right: -100px;
+            width: 400px; height: 400px; background: rgba(46, 125, 50, 0.05);
+            border-radius: 50%; z-index: 0;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+        
+        .hero-grid {
             display: grid;
             grid-template-columns: auto 1fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
+
+        .profile-wrapper { position: relative; }
         .profile-img {
-            width: 220px;
-            height: 220px;
+            width: 240px; height: 240px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border: 5px solid white;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.4s ease;
         }
-        .role { font-size: 1.3rem; font-weight: 500; color: var(--secondary); margin-bottom: 15px; }
+        .profile-wrapper:hover .profile-img { transform: scale(1.02) rotate(2deg); }
+
+        h1 { font-size: 3.5rem; font-weight: 800; margin: 0; line-height: 1.1; color: var(--primary); }
         
-        /* Badges */
-        .badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
-        .badge { 
-            background: #fff3e0; 
-            color: #e65100; 
-            padding: 6px 14px; 
-            border-radius: 50px; 
-            font-size: 0.9rem; 
-            font-weight: 700; 
-            border: 1px solid #ffe0b2;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+        .typing-container {
+            font-size: 1.4rem; font-weight: 600; color: var(--secondary);
+            margin: 15px 0; display: inline-block;
+        }
+        
+        .hero-desc { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin-bottom: 25px; }
+
+        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }
+        
+        .btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: var(--secondary); color: white;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+        .btn-primary:hover { background: var(--secondary-light); transform: translateY(-3px); }
+        
+        .social-icons { display: flex; gap: 15px; }
+        .social-icon {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            background: white;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-icon:hover { background: var(--primary); color: white; transform: translateY(-3px); }
+
+        /* --- SECTIONS --- */
+        section { padding: 80px 0; }
+        
+        .section-title {
+            font-size: 2rem; 
+            margin-bottom: 40px; 
+            position: relative; 
+            display: inline-block;
+            color: var(--primary);
+        }
+        .section-title::after {
+            content: ''; display: block; width: 60px; height: 4px;
+            background: var(--secondary); margin-top: 10px; border-radius: 2px;
         }
 
-        .social-links { display: flex; gap: 20px; font-size: 1.5rem; color: var(--primary); }
-        .social-links a:hover { color: var(--secondary); transform: translateY(-3px); }
-
-        /* SECTIONS */
         .card {
-            background: white;
+            background: var(--bg-card);
             padding: 30px;
             border-radius: var(--radius);
-            box-shadow: var(--card-shadow);
-            margin-bottom: 20px;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        /* SKILLS GRID */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .skill-group h3 { font-size: 1.2rem; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px; }
-        .skill-list li { list-style: none; margin-bottom: 8px; font-size: 0.95rem; }
-        .skill-list i { color: var(--secondary); margin-right: 8px; }
-
-        /* PROJECTS GRID */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
-        .project-card { 
-            display: flex; 
-            flex-direction: column; 
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,0,0,0.03);
             height: 100%;
-            transition: transform 0.2s;
+            display: flex; flex-direction: column;
         }
-        .project-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
-        .project-stats {
-            background: #f1f8e9;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            margin: 15px 0;
-        }
-        .project-stats li { list-style: none; margin-bottom: 5px; display: flex; gap: 8px; }
-        .project-stats i { color: var(--secondary); margin-top: 4px; }
-        
-        .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 15px; }
-        .tech-tag { 
-            font-size: 0.8rem; 
-            background: #e3f2fd; 
-            color: #1565c0; 
-            padding: 4px 10px; 
-            border-radius: 4px; 
-            font-weight: 600; 
-        }
+        .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
 
-        .btn { display: inline-block; padding: 10px 20px; background: var(--secondary); color: white; border-radius: 6px; font-weight: 600; margin-top: 15px; }
-        .btn:hover { background: #1b5e20; }
-        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
-        .btn-outline:hover { background: var(--primary); color: white; }
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .skill-list li { margin-bottom: 12px; display: flex; align-items: center; }
+        .skill-list i { color: var(--secondary); margin-right: 12px; width: 20px; text-align: center; }
 
-        /* TIMELINE (Experience & Education) */
-        .timeline-item { 
-            position: relative; 
-            padding-left: 25px; 
-            border-left: 3px solid #e0e0e0; 
-            margin-bottom: 35px; 
+        /* Projects & Publications */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
+        .project-card h3 { margin-top: 0; font-size: 1.3rem; margin-bottom: 10px; }
+        .tech-stack { margin-top: auto; padding-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+        .tech-tag {
+            font-size: 0.75rem; background: #e3f2fd; color: #1565c0;
+            padding: 5px 12px; border-radius: 20px; font-weight: 600;
         }
-        .timeline-item::before { 
-            content: ''; 
-            position: absolute; 
-            left: -9px; 
-            top: 6px; 
-            width: 15px; 
-            height: 15px; 
-            background: var(--secondary); 
-            border-radius: 50%; 
-            border: 3px solid white;
+        .link-text {
+            text-decoration: none; margin-top:15px; color:var(--secondary); font-weight:700; font-size:0.9rem;
+            display: inline-block; transition: 0.2s;
+        }
+        .link-text:hover { color: var(--primary); transform: translateX(5px); }
+
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 35px;
+            padding-bottom: 40px;
+            border-left: 3px solid #e0e0e0;
+        }
+        .timeline-item:last-child { border-left: 3px solid transparent; }
+        .timeline-dot {
+            position: absolute; left: -11px; top: 5px;
+            width: 19px; height: 19px;
+            background: var(--secondary);
+            border-radius: 50%;
+            border: 4px solid white;
             box-shadow: 0 0 0 2px var(--secondary);
         }
-        .time-badge { 
-            display: inline-block; 
-            background: #eee; 
-            padding: 4px 10px; 
-            border-radius: 4px; 
-            font-size: 0.8rem; 
-            font-weight: 600; 
-            margin-bottom: 8px; 
+        .time-badge {
+            background: var(--primary); color: white;
+            padding: 4px 12px; border-radius: 4px;
+            font-size: 0.8rem; font-weight: 700;
+            display: inline-block; margin-bottom: 10px;
         }
-        .timeline-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
-        .timeline-loc { font-size: 0.95rem; color: #666; font-style: italic; margin-bottom: 10px; }
-        
-        /* CERTIFICATIONS GRID */
-        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-        .cert-item { background: white; padding: 15px; border-radius: 8px; border: 1px solid #eee; border-left: 4px solid var(--primary); }
-        .cert-issuer { font-size: 0.8rem; text-transform: uppercase; color: #888; font-weight: 700; margin-bottom: 5px; }
-        .cert-name { font-weight: 600; color: var(--text-dark); }
 
-        /* Responsive */
+        /* Certs */
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .cert-item { background: white; padding: 20px; border-radius: 12px; border-left: 5px solid var(--accent); box-shadow: var(--shadow-sm); }
+        .cert-issuer { font-size:0.8rem; color:var(--secondary); font-weight:700; text-transform: uppercase; }
+        .cert-date { font-size: 0.8rem; color: #888; margin-top: 5px; }
+
+        /* SCROLL ANIMATION */
+        .hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .show { opacity: 1; transform: translateY(0); }
+
         @media (max-width: 768px) {
-            .header-grid { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 20px; }
-            .badges { justify-content: center; }
-            h1 { font-size: 2rem; }
-            .profile-img { width: 180px; height: 180px; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 30px; }
+            h1 { font-size: 2.5rem; }
+            .btn-group { justify-content: center; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">ANKIT.</div>
+            <div class="nav-links">
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#publications">Publications</a>
+                <a href="#experience">Experience</a>
+                <a href="#certifications">Certifications</a>
+            </div>
+        </div>
+    </nav>
+
     <header>
-        <div class="container header-grid">
-            <img src="image_328672.png" alt="ANKIT KUMAR" class="profile-img">
+        <div class="container hero-grid">
+            <div class="profile-wrapper">
+                <img src="image_328672.png" alt="Ankit Kumar" class="profile-img">
+            </div>
             <div>
-                <h1>ANKIT KUMAR</h1>
-                <div class="role">M.Tech Scholar at IIT Kharagpur</div>
-                <p style="font-size: 1.1rem; max-width: 600px;">
-                    specializing in <strong>Land and Water Resource Engineering</strong>.
-                    <br>Bridging the gap between Agricultural Engineering and Data Science through AI, IoT, and Geospatial Intelligence.
+                <h1>Ankit Kumar</h1>
+                <div class="typing-container" id="typing-text"></div>
+                <p class="hero-desc">
+                    Bridging the gap between <strong>Agricultural Engineering</strong> and <strong>Data Science</strong> through AI, IoT, and Geospatial Intelligence.
                 </p>
                 
-                <div class="badges">
-                    <span class="badge"><i class="fas fa-trophy"></i> Agricultural Engineering</span>
-                    <span class="badge"><i class="fas fa-medal"></i> Data Science</span>
-                    <span class="badge"><i class="fas fa-university"></i> Geospatial Intelligence</span>
-                    <span class="badge"><i class="fas fa-robot"></i> Renewable Energy</span>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/ankit-kumar-9b3b06228/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/explolar" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:ankituday123@gmail.com"><i class="fas fa-envelope"></i></a>
+                <div class="btn-group">
+                    <a href="resume.pdf" download class="btn btn-primary">
+                        <i class="fas fa-file-arrow-down"></i> Download Resume
+                    </a>
+                    <div class="social-icons">
+                        <a href="https://linkedin.com/in/ankit-kumar-9b3b06228/" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/explolar" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:ankituday123@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="container">
-
-        <section id="education">
-            <h2>Current Education</h2>
-            <div class="card" style="border-left: 5px solid var(--primary);">
-                <div class="timeline-item" style="margin-bottom: 0;">
-                    <span class="time-badge">2025 - Present</span>
-                    <div class="timeline-title">M.Tech in Land and Water Resource Engineering</div>
-                    <div class="timeline-loc">Indian Institute of Technology (IIT), Kharagpur</div>
-                    <p>Focusing on advanced Hydrology, Water Resource Systems, and applying Machine Learning/GIS for environmental risk management.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Expertise</h2>
+    <section id="skills">
+        <div class="container hidden">
+            <h2 class="section-title">Technical Arsenal</h2>
             <div class="skills-grid">
-                <div class="card skill-group">
-                    <h3><i class="fas fa-satellite"></i> Geospatial & GIS</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-check"></i> Google Earth Engine (GEE)</li>
-                        <li><i class="fas fa-check"></i> ArcGIS Pro & QGIS</li>
-                        <li><i class="fas fa-check"></i> Satellite Image Processing (Sentinel-2, CHIRPS)</li>
-                        <li><i class="fas fa-check"></i> 3D GIS & Remote Sensing</li>
+                <div class="card">
+                    <h3><i class="fas fa-satellite" style="color:var(--secondary);"></i> Geospatial Intelligence</h3>
+                    <ul class="skill-list" style="padding:0; list-style:none;">
+                        <li><i class="fas fa-check-circle"></i> Google Earth Engine (GEE)</li>
+                        <li><i class="fas fa-check-circle"></i> ArcGIS Pro & QGIS</li>
+                        <li><i class="fas fa-check-circle"></i> Sentinel-2 & CHIRPS Data</li>
+                        <li><i class="fas fa-check-circle"></i> Remote Sensing Analysis</li>
                     </ul>
                 </div>
-                <div class="card skill-group">
-                    <h3><i class="fas fa-code"></i> Data Science & AI</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-check"></i> Python (Pandas, Scikit-Learn)</li>
-                        <li><i class="fas fa-check"></i> Machine Learning (Random Forest)</li>
-                        <li><i class="fas fa-check"></i> Model Interpretation (SHAP)</li>
-                        <li><i class="fas fa-check"></i> SQL & Data Analytics</li>
+                <div class="card">
+                    <h3><i class="fas fa-brain" style="color:var(--primary);"></i> Data Science & AI</h3>
+                    <ul class="skill-list" style="padding:0; list-style:none;">
+                        <li><i class="fas fa-check-circle"></i> Python (Pandas, Scikit)</li>
+                        <li><i class="fas fa-check-circle"></i> Machine Learning (RF)</li>
+                        <li><i class="fas fa-check-circle"></i> Genetic Algorithms</li>
+                        <li><i class="fas fa-check-circle"></i> SQL & Streamlit</li>
                     </ul>
                 </div>
-                <div class="card skill-group">
-                    <h3><i class="fas fa-microchip"></i> Core Engineering</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-check"></i> IoT & Embedded Systems (Arduino)</li>
-                        <li><i class="fas fa-check"></i> Thermal Energy Storage (TES)</li>
-                        <li><i class="fas fa-check"></i> Simulation (ANSYS, Fusion 360)</li>
-                        <li><i class="fas fa-check"></i> Farm Machinery Automation</li>
+                <div class="card">
+                    <h3><i class="fas fa-microchip" style="color:var(--accent);"></i> IoT & Engineering</h3>
+                    <ul class="skill-list" style="padding:0; list-style:none;">
+                        <li><i class="fas fa-check-circle"></i> Embedded Systems (Arduino)</li>
+                        <li><i class="fas fa-check-circle"></i> Thermal Energy Storage</li>
+                        <li><i class="fas fa-check-circle"></i> ANSYS Simulation</li>
+                        <li><i class="fas fa-check-circle"></i> Farm Automation</li>
                     </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="projects">
-            <h2>Featured Projects</h2>
+    <section id="projects" style="background: #eef2f5;">
+        <div class="container hidden">
+            <h2 class="section-title">Featured Projects</h2>
             <div class="project-grid">
                 
-                <div class="card project-card">
-                    <h3>🌊 Bihar Hydro-Climatic Risk Atlas</h3>
-                    <p><strong>Flagship Project:</strong> An interactive web application that integrates multi-temporal satellite data to identify overlapping flood and drought risk zones.</p>
-                    <ul class="project-stats">
-                        <li><i class="fas fa-arrow-right"></i> Processed Sentinel-2 & CHIRPS data via GEE</li>
-                        <li><i class="fas fa-arrow-right"></i> Trained Random Forest model for risk prediction</li>
-                        <li><i class="fas fa-arrow-right"></i> Deployed live dashboard using Streamlit</li>
-                    </ul>
+                <div class="card project-card" style="border-left: 5px solid var(--accent);">
+                    <h3>🎓 AI Career & Counterfactual Engine</h3>
+                    <p style="font-size:0.95rem; color:#555;">
+                        <strong>"Don't just predict failure. Fix it."</strong><br>
+                        An actionable AI system that uses <strong>Genetic Algorithms</strong> to generate personalized "Counterfactual Plans" to turn failure into success.
+                    </p>
                     <div class="tech-stack">
                         <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Genetic Algo</span>
                         <span class="tech-tag">Streamlit</span>
-                        <span class="tech-tag">Google Earth Engine</span>
-                        <span class="tech-tag">ML</span>
                     </div>
-                    <a href="https://bihar-risk-atlas-ankit.streamlit.app/" target="_blank" class="btn">View Live App</a>
+                    <a href="https://placementpredictor-irbrr8lqtnarybgk2d84xr.streamlit.app/" target="_blank" class="link-text">👉 Try the App</a>
+                </div>
+
+                <div class="card project-card">
+                    <h3>🌊 Bihar Hydro-Climatic Atlas</h3>
+                    <p style="font-size:0.95rem; color:#555;">An interactive web app integrating multi-temporal satellite data to identify flood and drought risk zones.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">GEE</span>
+                        <span class="tech-tag">Random Forest</span>
+                    </div>
+                    <a href="https://bihar-risk-atlas-ankit.streamlit.app/" target="_blank" class="link-text">View Live Demo &rarr;</a>
                 </div>
 
                 <div class="card project-card">
                     <h3>☀️ Solar Drying with TES</h3>
-                    <p><strong>Major Research:</strong> Developed an indirect passive solar dryer integrated with grit-based Thermal Energy Storage (TES) media.</p>
-                    <ul class="project-stats">
-                        <li><i class="fas fa-chart-line"></i> <strong>161.24%</strong> Peak Thermal Efficiency</li>
-                        <li><i class="fas fa-clock"></i> Extended drying time by <strong>1.5-2 hours</strong> post-sunset</li>
-                        <li><i class="fas fa-bolt"></i> <strong>35-40% Faster</strong> than open sun drying</li>
-                    </ul>
+                    <p style="font-size:0.95rem; color:#555;">Designed an indirect passive solar dryer with grit-based Thermal Energy Storage media. Achieved 161% peak efficiency.</p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Thermal Engineering</span>
+                        <span class="tech-tag">Thermal Eng</span>
                         <span class="tech-tag">IoT Sensors</span>
-                        <span class="tech-tag">Data Analysis</span>
-                    </div>
-                </div>
-
-                <div class="card project-card">
-                    <h3>💧 Automated IoT Irrigation</h3>
-                    <p>Designed a smart irrigation system using microcontrollers and soil moisture sensors to remove manual guesswork.</p>
-                    <ul class="project-stats">
-                        <li><i class="fas fa-tint"></i> Real-time soil moisture monitoring</li>
-                        <li><i class="fas fa-check-circle"></i> Automated valve control to reduce water waste</li>
-                        <li><i class="fas fa-check-circle"></i> Successfully validated in field tests</li>
-                    </ul>
-                    <div class="tech-stack">
-                        <span class="tech-tag">C++ / Arduino</span>
-                        <span class="tech-tag">IoT</span>
-                        <span class="tech-tag">Automation</span>
-                    </div>
-                </div>
-
-                <div class="card project-card">
-                    <h3>🤖 Mobile Spraying Rover</h3>
-                    <p>Developed a mobile-controlled rover for automated pesticide and fertilizer spraying in agricultural fields.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Robotics</span>
-                        <span class="tech-tag">Wireless Comm</span>
-                        <span class="tech-tag">Design</span>
                     </div>
                 </div>
 
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="experience">
-            <h2>Professional Experience</h2>
+    <section id="publications">
+        <div class="container hidden">
+            <h2 class="section-title">Research Publications</h2>
+            <div class="card" style="border-left: 5px solid var(--primary);">
+                <div style="display: flex; gap: 15px; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="flex:1;">
+                        <h3 style="margin: 0; font-size: 1.4rem;">Design, Implementation, and Performance Assessment of an Ultrasonic-Guided Bluetooth-Controlled Spraying Rover</h3>
+                        <p style="color: #666; margin: 5px 0 10px 0;"><strong>Journal of AgriSearch</strong> • Published: December 18, 2025</p>
+                        <p style="font-size: 0.95rem; color: #444;">
+                            Integrates ultrasonic sensors for obstacle/row guidance and a mobile spraying mechanism to improve spraying accuracy and reduce human chemical exposure in vegetable crop rows.
+                        </p>
+                        <a href="https://journal.jsure.org.in/index.php/jas/article/view/1628" target="_blank" class="link-text"><i class="fas fa-external-link-alt"></i> Read Full Paper</a>
+                    </div>
+                    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; min-width: 150px;">
+                        <div style="font-weight:700; color:var(--primary); margin-bottom:5px;">Key Tech</div>
+                        <ul style="padding-left: 15px; margin: 0; font-size: 0.85rem; color: #555;">
+                            <li>Ultrasonic Sensors</li>
+                            <li>Bluetooth Control</li>
+                            <li>Precision Ag</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" style="background: #eef2f5;">
+        <div class="container hidden">
+            <h2 class="section-title">Experience & Education</h2>
             <div class="card">
                 
                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="time-badge">2025 - Present</span>
+                    <h3 style="margin:5px 0; color:var(--primary);">M.Tech in Land & Water Resource Engineering</h3>
+                    <div style="font-style:italic; color:#777; margin-bottom:10px;">IIT Kharagpur</div>
+                    <p>Focusing on Hydrology, Water Resource Systems, and AI applications.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <span class="time-badge">Aug 2024 - Nov 2024</span>
-                    <div class="timeline-title">Research Intern</div>
-                    <div class="timeline-loc">SPRERI | Anand, Gujarat</div>
-                    <ul>
-                        <li>Developed and analyzed nanofluids and nano-phase change materials (nano-PCMs) for enhanced thermal energy storage applications.</li>
-                        <li>Conducted experiments to evaluate the thermal conductivity, heat transfer efficiency, and stability of nanofluids for solar energy systems.</li>
-                        <li>Collaborated with a multidisciplinary team to analyze test results and recommend improvements for nanofluid-based solutions.</li>
-                    </ul>
+                    <h3 style="margin:5px 0; color:var(--primary);">Research Intern</h3>
+                    <div style="font-style:italic; color:#777; margin-bottom:10px;">SPRERI | Anand, Gujarat</div>
+                    <p>Analyzed nanofluids and nano-PCMs for enhanced thermal energy storage.</p>
                 </div>
 
                 <div class="timeline-item">
-                    <span class="time-badge">June 2024</span>
-                    <div class="timeline-title">Industrial Intern</div>
-                    <div class="timeline-loc">Swaraj Tractor | Jharkhand</div>
-                    <ul>
-                        <li>Completed intensive training in Sales and Service of agricultural machinery.</li>
-                        <li>Gained practical experience in tractor maintenance, dealer management, and financial analysis of farm machinery sales.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="time-badge">June 2023</span>
-                    <div class="timeline-title">Trainee</div>
-                    <div class="timeline-loc">NERFMTTI | Sonitpur, Assam</div>
-                    <ul>
-                        <li>Trained in the operation and maintenance of essential farm machinery including Tractors, ploughs, and harvesters.</li>
-                        <li>Mastered safety protocols and repair techniques for efficient field operation.</li>
-                    </ul>
+                    <div class="timeline-dot"></div>
+                    <span class="time-badge">Jun 2024</span>
+                    <h3 style="margin:5px 0; color:var(--primary);">Industrial Trainee</h3>
+                    <div style="font-style:italic; color:#777; margin-bottom:10px;">Swaraj Tractor (Mahindra)</div>
+                    <p>Market analysis, dealer management systems, and machinery service training.</p>
                 </div>
 
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="publications">
-            <h2>Research & Publications</h2>
-            <div class="card">
-                <ul style="padding-left: 20px;">
-                    <li style="margin-bottom: 20px;">
-                        <strong>"Exploring Advances in Thermal Energy Storage: Innovations, Technologies, Applications, and Sustainable Solutions"</strong><br>
-                        <span style="color: #666; font-size: 0.9rem;">Presented at 58th ISAE Annual Convention & International Symposium on Agricultural Engineering.</span><br>
-                        <em>Authors: Ankit Kumar, Dr. D.K. Vyas, Dr. Jogunuri Sravankumar</em>
-                    </li>
-                    <li>
-                        <strong>"Design and Development of Automated Fertigation System Using IoTs for Vegetable Crops"</strong><br>
-                        <span style="color: #666; font-size: 0.9rem;">Presented at 35th National Convention for Agricultural Engineers (IEI, Jabalpur).</span><br>
-                        <em>Authors: Ankit Kumar, Dr. Jogunuri Sravankumar</em>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="certifications">
-            <h2>Certifications</h2>
+    <section id="certifications">
+        <div class="container hidden">
+            <h2 class="section-title">Verified Certifications</h2>
             <div class="cert-grid">
+                
+                <div class="cert-item">
+                    <div class="cert-issuer">AlaskaX / UAF</div>
+                    <div style="font-weight: 700;">GIS Image Analysis in ArcGIS Pro</div>
+                    <div class="cert-date">Issued Dec 14, 2025</div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-issuer">AlaskaX / UAF</div>
+                    <div style="font-weight: 700;">GIS2x: 3D GIS</div>
+                    <div class="cert-date">Issued Dec 3, 2025</div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-issuer">AlaskaX / UAF</div>
+                    <div style="font-weight: 700;">GIS1x: GIS Foundations</div>
+                    <div class="cert-date">Issued Dec 1, 2025</div>
+                </div>
+
                 <div class="cert-item">
                     <div class="cert-issuer">IIRS - ISRO</div>
-                    <div class="cert-name">AI/ML for Geodata Analysis</div>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-issuer">IIRS - ISRO</div>
-                    <div class="cert-name">Remote Sensing & Digital Image Analysis</div>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-issuer">AlaskaX / edX</div>
-                    <div class="cert-name">GIS Essentials</div>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-issuer">edX</div>
-                    <div class="cert-name">GIS Image Analysis in ArcGIS Pro</div>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-issuer">DataCamp</div>
-                    <div class="cert-name">Introduction to Python</div>
+                    <div style="font-weight: 700;">AI/ML for Geodata Analysis</div>
                 </div>
                 <div class="cert-item">
                     <div class="cert-issuer">IBM</div>
-                    <div class="cert-name">Data Science Methodology</div>
+                    <div style="font-weight: 700;">Data Science Methodology</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="history">
-            <h2>Background & Achievements</h2>
-            <div class="card">
-                <div class="timeline-item">
-                    <span class="time-badge">2021 - 2025</span>
-                    <div class="timeline-title">B.Tech in Agricultural Engineering</div>
-                    <div class="timeline-loc">Anand Agricultural University (AAU), Gujarat</div>
-                    <p>Graduated with CGPA: <strong>8.057</strong></p>
-                </div>
-                
-                <h4 style="margin-top: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;">Key Achievements</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 10px;"><i class="fas fa-trophy" style="color: var(--accent); width: 25px;"></i> <strong>AIR 69</strong> in GATE 2025 (Agricultural Engineering)</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-trophy" style="color: var(--accent); width: 25px;"></i> <strong>AIR 111</strong> in GATE 2024 (Agricultural Engineering)</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-star" style="color: var(--accent); width: 25px;"></i> Recipient of ICAR-National Talent Scholarship</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-award" style="color: var(--accent); width: 25px;"></i> Qualified PRMO 2020 & NTSE Stage 1 (2019)</li>
-                </ul>
+    <footer style="background:var(--primary); color:white; padding:40px 0; text-align:center;">
+        <div class="container">
+            <h3>Let's Innovate Together</h3>
+            <p style="color:rgba(255,255,255,0.7);">Open for internships and research collaborations.</p>
+            <div class="social-icons" style="justify-content: center; margin-top:20px;">
+                <a href="https://linkedin.com/in/ankit-kumar-9b3b06228/" style="color:white; font-size:1.5rem;"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:ankituday123@gmail.com" style="color:white; font-size:1.5rem; margin-left:20px;"><i class="fas fa-envelope"></i></a>
             </div>
-        </section>
-
-    </div>
-
-    <footer style="text-align: center; padding: 40px; color: #888; border-top: 1px solid #eee; margin-top: 40px; background: white;">
-        <p>&copy; 2025 Ankit Kumar. Hosted on GitHub Pages.</p>
+            <p style="margin-top:30px; font-size:0.8rem; opacity:0.5;">&copy; 2025 Ankit Kumar. All Rights Reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        // 1. Typing Effect
+        const textToType = "M.Tech Scholar at IIT Kharagpur";
+        const typeContainer = document.getElementById("typing-text");
+        let typeIndex = 0;
+
+        function typeWriter() {
+            if (typeIndex < textToType.length) {
+                typeContainer.innerHTML += textToType.charAt(typeIndex);
+                typeIndex++;
+                setTimeout(typeWriter, 50); 
+            }
+        }
+        window.onload = typeWriter;
+
+        // 2. Scroll Reveal
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, observerOptions);
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
 
 </body>
 </html>
