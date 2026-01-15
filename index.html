@@ -9,21 +9,22 @@
     
     <style>
         :root {
-            /* Professional Palette - LinkedIn Inspired Blue */
-            --primary: #004182; 
-            --primary-light: #005E93;
-            --secondary: #2E7D32; 
-            --accent: #FF9800; 
-            --bg-body: #f3f2ef; 
-            --bg-card: #ffffff;
-            --text-main: #191919;
-            --text-muted: #666666;
-            --radius: 12px;
-            --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+            /* Premium Palette */
+            --primary: #0a66c2; 
+            --primary-dark: #004182;
+            --secondary: #059669; 
+            --accent: #f59e0b; 
+            --bg-body: #f3f4f6;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --radius: 16px;
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -34,180 +35,186 @@
             overflow-x: hidden;
         }
 
+        /* --- SCROLL PROGRESS BAR --- */
+        #progress-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 4px; z-index: 2000; background: transparent;
+        }
+        #progress-bar {
+            height: 100%; background: var(--primary); width: 0%; transition: width 0.1s;
+        }
+
         /* --- NAVIGATION --- */
         .navbar {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 15px 0;
+            transition: all 0.3s ease;
         }
         .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
+            max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;
         }
-        .nav-logo { font-weight: 800; font-size: 1.3rem; color: var(--primary); letter-spacing: -0.5px; }
-        .nav-links { display: flex; gap: 25px; }
+        .nav-logo { font-weight: 800; font-size: 1.4rem; color: var(--primary-dark); letter-spacing: -0.5px; }
+        .nav-links { display: flex; gap: 30px; }
         .nav-links a { 
-            font-size: 0.9rem; font-weight: 600; color: var(--text-muted); 
-            position: relative; text-decoration: none; transition: color 0.2s;
+            font-size: 0.95rem; font-weight: 600; color: var(--text-muted); 
+            position: relative; text-decoration: none; transition: color 0.3s;
         }
-        .nav-links a:hover { color: var(--primary); }
+        .nav-links a.active, .nav-links a:hover { color: var(--primary); }
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; 
+            background: var(--primary); transition: width 0.3s;
+        }
+        .nav-links a.active::after, .nav-links a:hover::after { width: 100%; }
 
         /* --- HERO SECTION --- */
         header {
-            background: white;
-            padding: 60px 0;
             position: relative;
+            padding: 100px 0 80px;
             overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            background: linear-gradient(-45deg, #ffffff, #eef2ff, #f0fdf4, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
         
         .hero-grid {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 40px;
-            align-items: center;
+            display: grid; grid-template-columns: auto 1fr; gap: 50px; align-items: center;
         }
 
         .profile-wrapper { position: relative; }
         .profile-img {
-            width: 200px; height: 200px;
+            width: 220px; height: 220px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid white;
-            box-shadow: var(--shadow-lg);
-            transition: transform 0.4s ease;
+            box-shadow: 0 20px 40px rgba(0,65,130,0.15);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .profile-wrapper:hover .profile-img { transform: scale(1.02); }
+        .profile-wrapper:hover .profile-img { transform: scale(1.05) rotate(2deg); }
 
-        h1 { font-size: 2.5rem; font-weight: 800; margin: 0; line-height: 1.2; color: var(--text-main); }
-        
-        .role-title {
-            font-size: 1.1rem; font-weight: 500; color: var(--text-muted);
-            margin: 10px 0 20px 0; display: block;
+        .hero-content h1 { 
+            font-size: 3rem; font-weight: 800; margin: 0; line-height: 1.1; 
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
         
-        .hero-desc { font-size: 1rem; color: var(--text-muted); max-width: 700px; margin-bottom: 25px; }
-
-        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }
+        .typing-container {
+            font-size: 1.2rem; font-weight: 600; color: var(--secondary);
+            margin: 10px 0 20px 0; height: 1.5em;
+        }
         
+        .hero-desc { font-size: 1.05rem; color: var(--text-muted); max-width: 650px; margin-bottom: 30px; }
+
         .btn {
             display: inline-flex; align-items: center; gap: 10px;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 0.9rem;
+            padding: 12px 28px; border-radius: 50px; font-weight: 600;
+            transition: all 0.3s ease; cursor: pointer; text-decoration: none;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
         }
-        .btn-primary {
-            background: var(--primary); color: white;
-        }
-        .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
-        
-        .social-icons { display: flex; gap: 15px; }
+        .btn-primary { background: var(--primary); color: white; border: none; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(10, 102, 194, 0.3); }
+
+        .social-links { display: flex; gap: 15px; margin-left: 20px; }
         .social-icon {
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            background: #f3f6f8;
-            display: flex; align-items: center; justify-content: center;
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            transition: all 0.2s ease;
-            text-decoration: none;
+            font-size: 1.5rem; color: var(--text-muted); transition: all 0.3s;
         }
-        .social-icon:hover { background: var(--primary); color: white; transform: translateY(-2px); }
+        .social-icon:hover { color: var(--primary); transform: translateY(-3px); }
 
         /* --- SECTIONS --- */
-        section { padding: 50px 0; }
+        section { padding: 80px 0; }
         
         .section-title {
-            font-size: 1.6rem; 
-            margin-bottom: 30px; 
-            font-weight: 700;
-            color: var(--text-main);
-            border-left: 4px solid var(--primary);
-            padding-left: 15px;
+            font-size: 2rem; margin-bottom: 40px; font-weight: 700; color: var(--text-main);
+            position: relative; display: inline-block;
+        }
+        .section-title::after {
+            content: ''; display: block; width: 60%; height: 4px; background: var(--primary);
+            margin-top: 8px; border-radius: 2px;
         }
 
         .card {
-            background: var(--bg-card);
-            padding: 25px;
+            background: var(--glass-bg);
+            padding: 30px;
             border-radius: var(--radius);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            height: 100%;
-            display: flex; flex-direction: column;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s ease;
+            height: 100%; display: flex; flex-direction: column;
+            backdrop-filter: blur(5px);
         }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+        .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: rgba(10, 102, 194, 0.2); }
 
-        /* Skills */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .skill-list li { margin-bottom: 8px; display: flex; align-items: center; color: var(--text-main); font-size: 0.95rem; }
-        .skill-list i { color: var(--secondary); margin-right: 10px; width: 20px; text-align: center; }
+        /* --- SKILLS --- */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .skill-list li { margin-bottom: 12px; display: flex; align-items: center; font-weight: 500; }
+        .skill-list i { color: var(--secondary); margin-right: 12px; font-size: 1.1rem; }
 
-        /* Projects */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-        .project-card h3 { margin-top: 0; font-size: 1.15rem; margin-bottom: 8px; color: var(--primary); }
-        .project-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px; }
-        .tech-stack { margin-top: auto; padding-top: 15px; display: flex; flex-wrap: wrap; gap: 6px; }
+        /* --- PROJECTS --- */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .project-card h3 { margin-top: 0; color: var(--primary-dark); font-size: 1.25rem; }
+        .tech-stack { margin-top: auto; padding-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
         .tech-tag {
-            font-size: 0.75rem; background: #e3f2fd; color: #004182;
-            padding: 3px 8px; border-radius: 4px; font-weight: 600;
+            font-size: 0.75rem; background: #e0f2fe; color: #0369a1;
+            padding: 5px 12px; border-radius: 20px; font-weight: 700;
         }
-        .link-text {
-            text-decoration: none; margin-top:10px; color: var(--primary); font-weight: 600; font-size:0.85rem;
-            display: inline-block; transition: 0.2s;
+        .project-link { 
+            margin-top: 15px; display: inline-block; font-weight: 700; color: var(--primary); 
+            text-decoration: none; display: flex; align-items: center; gap: 5px;
         }
-        .link-text:hover { text-decoration: underline; }
+        .project-link:hover { text-decoration: underline; gap: 8px; transition: gap 0.2s; }
 
-        /* Timeline */
-        .timeline-item {
-            position: relative;
-            padding-left: 25px;
-            padding-bottom: 30px;
-            border-left: 2px solid #e0e0e0;
+        /* --- CONFERENCE LIST --- */
+        .conf-item {
+            display: flex; gap: 20px; align-items: flex-start; 
+            padding-bottom: 25px; border-bottom: 1px solid #e5e7eb; margin-bottom: 25px;
         }
-        .timeline-item:last-child { border-left: 2px solid transparent; }
+        .conf-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .conf-icon {
+            background: #fef3c7; color: #d97706; width: 45px; height: 45px; 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        /* --- TIMELINE --- */
+        .timeline-item {
+            position: relative; padding-left: 35px; padding-bottom: 40px;
+            border-left: 2px solid #e5e7eb;
+        }
+        .timeline-item:last-child { border-left-color: transparent; }
         .timeline-dot {
-            position: absolute; left: -9px; top: 5px;
-            width: 16px; height: 16px;
-            background: white;
-            border-radius: 50%;
-            border: 4px solid var(--primary);
+            position: absolute; left: -10px; top: 5px; width: 18px; height: 18px;
+            background: white; border: 4px solid var(--primary); border-radius: 50%;
         }
         .time-badge {
-            background: #f3f6f8; color: var(--text-muted);
-            padding: 3px 8px; border-radius: 4px;
-            font-size: 0.75rem; font-weight: 700;
-            display: inline-block; margin-bottom: 5px;
+            background: #dbeafe; color: #1e40af; padding: 4px 12px; border-radius: 6px;
+            font-size: 0.8rem; font-weight: 700; display: inline-block; margin-bottom: 10px;
         }
 
-        /* Certs */
-        .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
-        .cert-item { background: white; padding: 15px; border-radius: 8px; border: 1px solid #e0e0e0; }
-        .cert-issuer { font-size:0.75rem; color: var(--text-muted); font-weight:700; text-transform: uppercase; margin-bottom: 3px;}
-        .cert-date { font-size: 0.8rem; color: #888; margin-top: 5px; }
+        /* --- CERTIFICATIONS --- */
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+        .cert-item { background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb; transition: transform 0.2s; }
+        .cert-item:hover { transform: scale(1.02); border-color: var(--primary); }
+        .cert-issuer { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; margin-bottom: 5px; }
 
-        /* SCROLL ANIMATION */
-        .hidden { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        /* --- ANIMATIONS --- */
+        .hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .show { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 768px) {
-            .hero-grid { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 30px; }
-            h1 { font-size: 2rem; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 40px; }
+            .hero-content h1 { font-size: 2.2rem; }
             .btn-group { justify-content: center; }
             .nav-links { display: none; }
         }
@@ -215,15 +222,17 @@
 </head>
 <body>
 
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">ANKIT.</div>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#experience" class="nav-link">Experience</a>
             </div>
         </div>
     </nav>
@@ -233,23 +242,22 @@
             <div class="profile-wrapper">
                 <img src="image_328672.png" alt="Ankit Kumar" class="profile-img">
             </div>
-            <div>
+            <div class="hero-content">
                 <h1>Ankit Kumar</h1>
-                <div class="role-title">M.Tech (LWRE) @ IIT Kharagpur | GIS & Remote Sensing | Solar Energy Systems | Precision Agriculture</div>
+                <div class="typing-container"><span id="typewriter"></span></div>
                 <p class="hero-desc">
-                    M.Tech scholar in Land and Water Resources Engineering at IIT Kharagpur with a strong background in Agricultural Engineering, GIS, Remote Sensing, IoT-based agricultural systems, and renewable energy technologies. 
-                    <br><br>
-                    Passionate about applying <strong>AI/ML</strong> and <strong>smart technologies</strong> for sustainable agriculture and water resources management.
+                    M.Tech scholar in <strong>Land and Water Resources Engineering</strong> at IIT Kharagpur. 
+                    Merging Agricultural Engineering with <strong>Data Science, GIS, and IoT</strong> to build sustainable, smart farming solutions.
                 </p>
                 
-                <div class="btn-group">
+                <div style="display: flex; align-items: center; flex-wrap: wrap;">
                     <a href="resume.pdf" download class="btn btn-primary">
                         <i class="fas fa-file-arrow-down"></i> Download Resume
                     </a>
-                    <div class="social-icons">
-                        <a href="https://linkedin.com/in/ankit-kumar-9b3b06228/" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/explolar" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="mailto:ankituday123@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/ankit-kumar-9b3b06228/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/explolar" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="mailto:ankituday123@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
@@ -258,30 +266,33 @@
 
     <section id="skills">
         <div class="container hidden">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title">Technical Arsenal</h2>
             <div class="skills-grid">
                 <div class="card">
-                    <h3><i class="fas fa-satellite" style="color:var(--primary);"></i> GIS & Remote Sensing</h3>
+                    <h3><i class="fas fa-satellite" style="color:#0a66c2;"></i> GIS & Remote Sensing</h3>
                     <ul class="skill-list" style="padding:0; list-style:none;">
-                        <li><i class="fas fa-check-circle"></i> Google Earth Engine (GEE), ArcGIS Pro</li>
-                        <li><i class="fas fa-check-circle"></i> QGIS, PostGIS, Rasterio</li>
-                        <li><i class="fas fa-check-circle"></i> Sentinel-2, MODIS, CHIRPS Data</li>
+                        <li><i class="fas fa-check"></i> Google Earth Engine (GEE)</li>
+                        <li><i class="fas fa-check"></i> ArcGIS Pro & QGIS</li>
+                        <li><i class="fas fa-check"></i> Sentinel-2 & MODIS Analysis</li>
+                        <li><i class="fas fa-check"></i> Digital Image Processing</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3><i class="fas fa-microchip" style="color:var(--accent);"></i> IoT & Hardware</h3>
+                    <h3><i class="fas fa-brain" style="color:#f59e0b;"></i> AI & Data Science</h3>
                     <ul class="skill-list" style="padding:0; list-style:none;">
-                        <li><i class="fas fa-check-circle"></i> <strong>Prototyping:</strong> Arduino, Bluetooth Systems</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Sensors:</strong> Soil Moisture, Ultrasonic, NPK</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Systems:</strong> Solar Dryers, Auto-Irrigation</li>
+                        <li><i class="fas fa-check"></i> Python (Pandas, Scikit-learn)</li>
+                        <li><i class="fas fa-check"></i> Genetic Algorithms & ML</li>
+                        <li><i class="fas fa-check"></i> Data Analytics & Viz</li>
+                        <li><i class="fas fa-check"></i> Marketing Strategy Analytics</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3><i class="fas fa-code" style="color:var(--secondary);"></i> Programming & Professional</h3>
+                    <h3><i class="fas fa-microchip" style="color:#059669;"></i> IoT & AgTech</h3>
                     <ul class="skill-list" style="padding:0; list-style:none;">
-                        <li><i class="fas fa-check-circle"></i> <strong>Code:</strong> Python (Data Science), C, SQL</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Data:</strong> Marketing Strategy, Analytics</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Docs:</strong> Technical Documentation</li>
+                        <li><i class="fas fa-check"></i> Arduino & C Programming</li>
+                        <li><i class="fas fa-check"></i> Bluetooth Control Systems</li>
+                        <li><i class="fas fa-check"></i> Precision Agriculture Sensors</li>
+                        <li><i class="fas fa-check"></i> Solar Thermal Systems</li>
                     </ul>
                 </div>
             </div>
@@ -295,20 +306,21 @@
                 
                 <div class="card project-card" style="border-top: 4px solid var(--accent);">
                     <h3>🎓 AI Career & Counterfactual Engine</h3>
-                    <p class="project-desc">
-                        Actionable AI system using Genetic Algorithms to generate personalized "Counterfactual Plans" for student placement success.
+                    <p style="color:var(--text-muted); font-size:0.9rem;">
+                        <strong>"Don't just predict failure. Fix it."</strong><br>
+                        An AI system using Genetic Algorithms to generate personalized actionable plans for student placement success.
                     </p>
                     <div class="tech-stack">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Genetic Algo</span>
                         <span class="tech-tag">Streamlit</span>
                     </div>
-                    <a href="https://placementpredictor-irbrr8lqtnarybgk2d84xr.streamlit.app/" target="_blank" class="link-text">👉 Try the App</a>
+                    <a href="https://placementpredictor-irbrr8lqtnarybgk2d84xr.streamlit.app/" target="_blank" class="project-link">👉 Try the App <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="card project-card">
                     <h3>🌊 Bihar Hydro-Climatic Risk Atlas</h3>
-                    <p class="project-desc">
+                    <p style="color:var(--text-muted); font-size:0.9rem;">
                         Modeled flood/groundwater stress using Random Forest (R² > 0.85) on multi-source satellite data with SHAP explainability.
                     </p>
                     <div class="tech-stack">
@@ -319,50 +331,48 @@
                 </div>
 
                 <div class="card project-card">
-                    <h3>💧 Auto-Fertigation System</h3>
-                    <p class="project-desc">
-                        NPK sensor-based nutrient delivery automation. Achieved 38.5% water reduction vs flood irrigation.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Arduino</span>
-                        <span class="tech-tag">IoT</span>
-                        <span class="tech-tag">Sensors</span>
-                    </div>
-                </div>
-
-                 <div class="card project-card">
-                    <h3>🤖 Bluetooth Controlled Rover</h3>
-                    <p class="project-desc">
-                        Ultrasonic-guided spraying rover for vegetable crops. 94% obstacle detection accuracy.
+                    <h3>🤖 Bluetooth Spraying Rover</h3>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">
+                        Ultrasonic-guided rover for vegetable crops. 94% obstacle detection accuracy. Reduced chemical exposure by >90%.
                     </p>
                     <div class="tech-stack">
                         <span class="tech-tag">Robotics</span>
-                        <span class="tech-tag">Bluetooth</span>
+                        <span class="tech-tag">Arduino</span>
                         <span class="tech-tag">Android App</span>
                     </div>
                 </div>
 
                 <div class="card project-card">
                     <h3>♿ Smart Wheelchair</h3>
-                    <p class="project-desc">
-                        Obstacle avoidance & smartphone-controlled mobility system for assistive technology.
+                    <p style="color:var(--text-muted); font-size:0.9rem;">
+                        Obstacle avoidance & smartphone-controlled mobility system utilizing ultrasonic sensors for assistive technology.
                     </p>
                     <div class="tech-stack">
                         <span class="tech-tag">Arduino</span>
-                        <span class="tech-tag">Ultrasonic</span>
-                        <span class="tech-tag">Assistive Tech</span>
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">Healthcare</span>
                     </div>
                 </div>
 
                 <div class="card project-card">
                     <h3>☀️ Solar Dryer Logger</h3>
-                    <p class="project-desc">
-                        Real-time RH & temperature monitoring logger designed specifically for forced convection solar dryers.
+                    <p style="color:var(--text-muted); font-size:0.9rem;">
+                        Real-time Humidity (RH) & Temperature monitoring logger designed specifically for forced convection solar dryers.
                     </p>
                     <div class="tech-stack">
                         <span class="tech-tag">Data Logging</span>
                         <span class="tech-tag">Sensors</span>
-                        <span class="tech-tag">Solar Energy</span>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <h3>🦯 Smart Blind Stick</h3>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">
+                         Ultrasonic-based obstacle detection system providing haptic feedback for visually impaired navigation.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">Ultrasonic</span>
                     </div>
                 </div>
 
@@ -370,71 +380,107 @@
         </div>
     </section>
 
-    <section id="publications">
+    <section id="research">
         <div class="container hidden">
-            <h2 class="section-title">Publications</h2>
-            <div class="card" style="border-left: 4px solid var(--primary);">
-                <div style="display: flex; gap: 15px; align-items: flex-start;">
-                    <i class="fas fa-book" style="color: var(--primary); margin-top: 5px;"></i>
+            <h2 class="section-title">Research & Conferences</h2>
+            
+            <div class="card" style="border-left: 5px solid var(--primary); margin-bottom: 30px;">
+                <h3 style="margin-bottom: 20px; font-size: 1.4rem;">Publications</h3>
+                <div style="display: flex; gap: 20px; align-items: flex-start;">
+                    <div style="background: #e0f2fe; color: var(--primary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fas fa-scroll" style="font-size: 1.2rem;"></i>
+                    </div>
                     <div>
-                        <h3 style="margin: 0; font-size: 1.1rem; color: #191919;">Design, Implementation, and Performance Assessment of an Ultrasonic-Guided Bluetooth-Controlled Spraying Rover</h3>
-                        <p style="color: #666; margin: 5px 0 5px 0; font-size: 0.9rem;"><strong>Journal of AgriSearch</strong> • Published: December 18, 2025</p>
-                        <a href="https://journal.jsure.org.in/index.php/jas/article/view/1628" target="_blank" class="link-text">Read Full Paper &rarr;</a>
+                        <h4 style="margin: 0; font-size: 1.15rem; color: var(--primary-dark);">Design, Implementation, and Performance Assessment of an Ultrasonic-Guided Bluetooth-Controlled Spraying Rover</h4>
+                        <p style="color: var(--text-muted); margin: 5px 0 10px 0;"><strong>Journal of AgriSearch</strong> • Dec 2025 [cite: 81]</p>
+                        <p style="font-size: 0.95rem; margin-bottom: 15px;">
+                            Developed and field-tested an automated precision spraying rover, improving spraying accuracy and operator safety.
+                        </p>
+                        <a href="https://journal.jsure.org.in/index.php/jas/article/view/1628" target="_blank" class="project-link">Read Paper <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
+            </div>
+
+            <div class="card" style="border-left: 5px solid var(--accent);">
+                <h3 style="margin-bottom: 20px; font-size: 1.4rem;">Conference Presentations</h3>
+                
+                <div class="conf-item">
+                    <div class="conf-icon"><i class="fas fa-microphone-alt"></i></div>
+                    <div>
+                        <h4 style="margin: 0; font-size: 1.1rem;">58th ISAE Annual Convention & International Symposium [cite: 83]</h4>
+                        <div style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px;">
+                            <strong>Parbhani, Maharashtra</strong> • Nov 2024
+                        </div>
+                        <p style="font-size: 0.95rem; margin: 0;">
+                            Presented research paper on <strong>Advanced Thermal Energy Storage (TES) Technologies</strong>, covering innovative materials and sustainability challenges[cite: 84].
+                        </p>
+                    </div>
+                </div>
+
+                <div class="conf-item">
+                    <div class="conf-icon"><i class="fas fa-users"></i></div>
+                    <div>
+                        <h4 style="margin: 0; font-size: 1.1rem;">35th National Convention of Agricultural Engineers (IEI) [cite: 86]</h4>
+                        <div style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px;">
+                            <strong>JNKVV, Jabalpur</strong>
+                        </div>
+                        <p style="font-size: 0.95rem; margin: 0;">
+                            Presented paper: <em>"Design and Development of Automated Fertigation System using IoT"</em>. Demonstrated 38.5% water savings over flood irrigation[cite: 87].
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <section id="experience" style="background: white;">
         <div class="container hidden">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title">Professional Experience</h2>
             <div class="card">
                 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Aug 2024 - Nov 2024</span>
-                    <h3 style="margin:5px 0; font-size: 1.1rem;">Intern</h3>
-                    <div style="font-style:italic; color:#777; margin-bottom:10px;">Sardar Patel Renewable Energy Research Institute (SPRERI) | Anand, Gujarat</div>
-                    <p style="font-size: 0.95rem;">
-                        • Worked on solar thermal systems, nanofluids, PCMs, and thermal energy storage.<br>
-                        • Conducted experimental evaluation for solar drying and energy efficiency.
+                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Research Intern</h3>
+                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">SPRERI | Anand, Gujarat</div>
+                    <p style="font-size: 0.95rem; color: #555;">
+                        Worked on solar thermal systems, nanofluids, PCMs, and thermal energy storage. Conducted experimental evaluation for solar drying and energy efficiency.
                     </p>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Jun 2024</span>
-                    <h3 style="margin:5px 0; font-size: 1.1rem;">Summer Intern</h3>
-                    <div style="font-style:italic; color:#777; margin-bottom:10px;">Swaraj Tractors | Jharkhand</div>
-                    <p style="font-size: 0.95rem;">
-                        • Exposure to tractor marketing, dealer management, and sales strategy.<br>
-                        • Analyzed sales performance and customer engagement strategies.
+                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Summer Intern</h3>
+                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Swaraj Tractors | Jharkhand</div>
+                    <p style="font-size: 0.95rem; color: #555;">
+                        Analyzed sales performance, dealer management, and customer engagement strategies for tractor marketing.
                     </p>
                 </div>
 
                  <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Jun 2023</span>
-                    <h3 style="margin:5px 0; font-size: 1.1rem;">Trainee</h3>
-                    <div style="font-style:italic; color:#777; margin-bottom:10px;">NERFMTTI</div>
-                    <p style="font-size: 0.95rem;">
-                        • Training on basic farm machinery and mechanization.
+                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Trainee</h3>
+                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">NERFMTTI</div>
+                    <p style="font-size: 0.95rem; color: #555;">
+                         Training on basic farm machinery operation and mechanization standards.
                     </p>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Aug 2022 - Sep 2022</span>
-                    <h3 style="margin:5px 0; font-size: 1.1rem;">Teaching Intern</h3>
-                    <div style="font-style:italic; color:#777; margin-bottom:10px;">ConnectFor (Remote)</div>
+                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Teaching Intern</h3>
+                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">ConnectFor (Remote)</div>
                 </div>
 
                  <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Jun 2022 - Aug 2022</span>
-                    <h3 style="margin:5px 0; font-size: 1.1rem;">Student Ambassador</h3>
-                    <div style="font-style:italic; color:#777; margin-bottom:10px;">Internshala</div>
+                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Student Ambassador</h3>
+                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Internshala</div>
                 </div>
 
             </div>
@@ -448,15 +494,14 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Jul 2025 - May 2027</span>
-                    <h3 style="margin:5px 0; font-size: 1.1rem;">M.Tech in Land and Water Resources Engineering</h3>
+                    <h3 style="margin:5px 0; font-size: 1.15rem;">M.Tech in Land and Water Resources Engineering</h3>
                     <div style="font-style:italic; color:#777;">Indian Institute of Technology (IIT), Kharagpur</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Jun 2021 - Jun 2025</span>
-                    <h3 style="margin:5px 0; font-size: 1.1rem;">B.Tech in Agricultural Engineering</h3>
+                    <h3 style="margin:5px 0; font-size: 1.15rem;">B.Tech in Agricultural Engineering</h3>
                     <div style="font-style:italic; color:#777;">Anand Agricultural University, Anand</div>
-                    <p style="margin-top: 5px; font-size:0.9rem;"><strong>Skills:</strong> C Programming, Arduino</p>
                 </div>
             </div>
         </div>
@@ -464,63 +509,116 @@
 
     <section id="certifications" style="background: white;">
         <div class="container hidden">
-            <h2 class="section-title">Licenses & Certifications</h2>
+            <h2 class="section-title">Certifications</h2>
             <div class="cert-grid">
                 <div class="cert-item">
                     <div class="cert-issuer">AlaskaX (edX)</div>
-                    <div style="font-weight: 600; font-size: 0.9rem;">GIS Essentials</div>
+                    <div style="font-weight: 700;">GIS Essentials</div>
                     <div class="cert-date">Dec 2025</div>
                 </div>
                 <div class="cert-item">
                     <div class="cert-issuer">edX</div>
-                    <div style="font-weight: 600; font-size: 0.9rem;">3D GIS & GIS Image Analysis</div>
+                    <div style="font-weight: 700;">GIS Image Analysis in ArcGIS Pro</div>
+                    <div class="cert-date">Dec 2025</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-issuer">edX</div>
+                    <div style="font-weight: 700;">3D GIS</div>
                     <div class="cert-date">Dec 2025</div>
                 </div>
                 <div class="cert-item">
                     <div class="cert-issuer">IIRS-ISRO</div>
-                    <div style="font-weight: 600; font-size: 0.9rem;">AI/ML for Geodata Analysis</div>
+                    <div style="font-weight: 700;">AI/ML for Geodata Analysis</div>
                     <div class="cert-date">Oct 2024</div>
                 </div>
                 <div class="cert-item">
                     <div class="cert-issuer">IBM</div>
-                    <div style="font-weight: 600; font-size: 0.9rem;">Data Science Methodology</div>
+                    <div style="font-weight: 700;">Data Science Methodology</div>
                 </div>
                 <div class="cert-item">
                     <div class="cert-issuer">IBM</div>
-                    <div style="font-weight: 600; font-size: 0.9rem;">Tools for Data Science</div>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-issuer">IBM</div>
-                    <div style="font-weight: 600; font-size: 0.9rem;">What is Data Science</div>
+                    <div style="font-weight: 700;">Tools for Data Science</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="background:var(--primary); color:white; padding:40px 0; text-align:center;">
+    <footer style="background: var(--primary-dark); color: white; padding: 60px 0; text-align: center;">
         <div class="container">
-            <h3>Let's Connect</h3>
-            <div class="social-icons" style="justify-content: center; margin-top:20px; background: transparent;">
-                <a href="https://linkedin.com/in/ankit-kumar-9b3b06228/" style="color:white; font-size:1.5rem; background:transparent;"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:ankituday123@gmail.com" style="color:white; font-size:1.5rem; margin-left:20px; background:transparent;"><i class="fas fa-envelope"></i></a>
+            <h3 style="margin-bottom: 20px;">Let's Build Something Sustainable.</h3>
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <a href="https://linkedin.com/in/ankit-kumar-9b3b06228/" class="social-icon" style="background: rgba(255,255,255,0.1); color: white;"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:ankituday123@gmail.com" class="social-icon" style="background: rgba(255,255,255,0.1); color: white;"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/explolar" class="social-icon" style="background: rgba(255,255,255,0.1); color: white;"><i class="fab fa-github"></i></a>
             </div>
-            <p style="margin-top:30px; font-size:0.8rem; opacity:0.7;">&copy; 2025 Ankit Kumar</p>
+            <p style="margin-top: 30px; font-size: 0.85rem; opacity: 0.6;">&copy; <span id="year"></span> Ankit Kumar. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // 1. Scroll Reveal
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
+        // 1. Scroll Progress Bar
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+            
+            // Active Link Highlight
+            const sections = document.querySelectorAll("section, header");
+            const navLi = document.querySelectorAll(".nav-link");
+            let current = "";
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute("id");
                 }
             });
-        }, observerOptions);
 
-        const hiddenElements = document.querySelectorAll('.hidden');
+            navLi.forEach((li) => {
+                li.classList.remove("active");
+                if (li.getAttribute("href").includes(current)) {
+                    li.classList.add("active");
+                }
+            });
+        };
+
+        // 2. Typing Effect
+        const typeText = ["GIS & Remote Sensing.", "Solar Energy Systems.", "Precision Agriculture.", "IoT & Automation."];
+        let count = 0;
+        let index = 0;
+        let currentText = "";
+        let letter = "";
+
+        (function type() {
+            if (count === typeText.length) { count = 0; }
+            currentText = typeText[count];
+            letter = currentText.slice(0, ++index);
+
+            document.getElementById("typewriter").textContent = letter;
+            if (letter.length === currentText.length) {
+                count++;
+                index = 0;
+                setTimeout(type, 2000); 
+            } else {
+                setTimeout(type, 100); 
+            }
+        })();
+
+        // 3. Scroll Reveal Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const hiddenElements = document.querySelectorAll(".hidden");
         hiddenElements.forEach((el) => observer.observe(el));
+
+        // 4. Auto Year
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 
 </body>
