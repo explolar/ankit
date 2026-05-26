@@ -13,7 +13,8 @@
             --primary: #0a66c2; 
             --primary-dark: #004182;
             --secondary: #059669; 
-            --accent: #f59e0b; 
+            --accent: #f59e0b;
+            --danger: #ef4444; 
             --bg-body: #f3f4f6;
             --glass-bg: rgba(255, 255, 255, 0.85);
             --glass-border: rgba(255, 255, 255, 0.5);
@@ -246,8 +247,8 @@
                 <h1>Ankit Kumar</h1>
                 <div class="typing-container"><span id="typewriter"></span></div>
                 <p class="hero-desc">
-                    M.Tech scholar in <strong>Land and Water Resources Engineering</strong> at IIT Kharagpur. 
-                    Merging Agricultural Engineering with <strong>Data Science, GIS, and IoT</strong> to build sustainable, smart farming solutions.
+                    M.Tech scholar in <strong>Land and Water Resources Engineering</strong> at IIT Kharagpur and National Finalist in the MoPR Geospatial Intelligence Challenge. 
+                    Working at the intersection of <strong>Climate Intelligence, GeoAI, Remote Sensing, and Hydroinformatics</strong> to build resilient environmental support systems.
                 </p>
                 
                 <div style="display: flex; align-items: center; flex-wrap: wrap;">
@@ -255,7 +256,7 @@
                         <i class="fas fa-file-arrow-down"></i> Download Resume
                     </a>
                     <div class="social-links">
-                        <a href="https://linkedin.com/in/ankit-kumar-9b3b06228/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://linkedin.com/in/ankit-kumar-9b3b06228" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/explolar" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
                         <a href="mailto:ankituday123@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
                     </div>
@@ -272,84 +273,94 @@
                     <h3><i class="fas fa-satellite" style="color:#0a66c2;"></i> GIS & Remote Sensing</h3>
                     <ul class="skill-list" style="padding:0; list-style:none;">
                         <li><i class="fas fa-check"></i> Google Earth Engine (GEE)</li>
-                        <li><i class="fas fa-check"></i> ArcGIS Pro & QGIS</li>
-                        <li><i class="fas fa-check"></i> Sentinel-2 & MODIS Analysis</li>
-                        <li><i class="fas fa-check"></i> Digital Image Processing</li>
+                        <li><i class="fas fa-check"></i> Drone Point Cloud / LiDAR Data</li>
+                        <li><i class="fas fa-check"></i> Sentinel & INSAT Data Analysis</li>
+                        <li><i class="fas fa-check"></i> Spatial Modelling & ArcGIS Pro</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3><i class="fas fa-brain" style="color:#f59e0b;"></i> AI & Data Science</h3>
+                    <h3><i class="fas fa-brain" style="color:#f59e0b;"></i> AI & Climate Tech</h3>
                     <ul class="skill-list" style="padding:0; list-style:none;">
-                        <li><i class="fas fa-check"></i> Python (Pandas, Scikit-learn)</li>
-                        <li><i class="fas fa-check"></i> Genetic Algorithms & ML</li>
-                        <li><i class="fas fa-check"></i> Data Analytics & Viz</li>
-                        <li><i class="fas fa-check"></i> Marketing Strategy Analytics</li>
+                        <li><i class="fas fa-check"></i> Spatial ML (XGBoost, Isolation Forest)</li>
+                        <li><i class="fas fa-check"></i> Deep Learning (Attention U-Net, PyTorch)</li>
+                        <li><i class="fas fa-check"></i> Explainable AI (XAI)</li>
+                        <li><i class="fas fa-check"></i> Computer Vision for Environment</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3><i class="fas fa-microchip" style="color:#059669;"></i> IoT & AgTech</h3>
+                    <h3><i class="fas fa-water" style="color:#059669;"></i> Hydroinformatics</h3>
                     <ul class="skill-list" style="padding:0; list-style:none;">
-                        <li><i class="fas fa-check"></i> Arduino & C Programming</li>
-                        <li><i class="fas fa-check"></i> Bluetooth Control Systems</li>
-                        <li><i class="fas fa-check"></i> Precision Agriculture Sensors</li>
-                        <li><i class="fas fa-check"></i> Solar Thermal Systems</li>
+                        <li><i class="fas fa-check"></i> Drainage Network Optimisation (MST)</li>
+                        <li><i class="fas fa-check"></i> HEC-HMS & HEC-RAS</li>
+                        <li><i class="fas fa-check"></i> WRF Atmospheric Modelling</li>
+                        <li><i class="fas fa-check"></i> Flood & Multi-hazard Analytics</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="projects" style="background: white;">
         <div class="container hidden">
             <h2 class="section-title">Featured Projects</h2>
             <div class="project-grid">
-                <div class="card project-card" style="border-top: 4px solid var(--primary);">
-                    <h3>HydroRisk Atlas</h3>
+
+                <div class="card project-card" style="border-top: 4px solid var(--danger);">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                        <h3 style="margin: 0;">Drainage Mitra</h3>
+                        <span style="background: #fee2e2; color: #b91c1c; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; margin-left: 10px;">🏆 National Finalist</span>
+                    </div>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
-                        <strong>Satellite-Powered Flood Risk Intelligence | IIT Kharagpur</strong><br>
-                        Modular flood intelligence platform combining Google Earth Engine and machine learning for susceptibility mapping, SAR inundation detection, impact estimation, and hydrology workflows.
+                        <strong>AI-Driven Automated Drainage Design | MoPR Hackathon</strong><br>
+                        An end-to-end pipeline converting raw drone point cloud data into actionable drainage designs. Integrates XGBoost, Isolation Forest, and Attention U-Net for waterlogging prediction, alongside graph-based MST optimization for rural infrastructure planning.
                     </p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Streamlit</span>
-                        <span class="tech-tag">Google Earth Engine</span>
+                        <span class="tech-tag">Point Cloud Processing</span>
+                        <span class="tech-tag">Attention U-Net</span>
+                        <span class="tech-tag">PyTorch</span>
                         <span class="tech-tag">XGBoost</span>
-                        <span class="tech-tag">LightGBM</span>
+                        <span class="tech-tag">Hydraulic Engineering</span>
                     </div>
-                    <a href="https://flood-predictor-518484395506.asia-south1.run.app" target="_blank" class="project-link">Live Demo <i class="fas fa-arrow-right"></i></a>
-                    <a href="https://github.com/explolar/flood-predictor" target="_blank" class="project-link">GitHub <i class="fas fa-arrow-right"></i></a>
-                    <a href="https://linkedin.com/in/ankit-kumar-9b3b06228/" target="_blank" class="project-link">LinkedIn <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="card project-card" style="border-top: 4px solid var(--primary);">
+                    <h3>Terra-shield & TerrAI</h3>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">
+                        <strong>GeoAI & Soil Intelligence Platform</strong><br>
+                        Satellite-powered intelligence integrating SAR flood detection, AHP-MCDM modelling, SoilGrids, and explainable ML pipelines using Earth Engine and Sentinel imagery.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Earth Engine</span>
+                        <span class="tech-tag">SAR/Sentinel</span>
+                        <span class="tech-tag">CMIP6</span>
+                        <span class="tech-tag">Deep Learning</span>
+                    </div>
                 </div>
 
                 <div class="card project-card" style="border-top: 4px solid var(--accent);">
-                    <h3>AI-Enabled Forest Change Detection</h3>
+                    <h3>FluviaAI & HydroRisk Atlas</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
-                        <strong>"I spent my weekend teaching AI to find trees so I didn't have to."</strong><br>
-                        Automated geospatial app that detects deforestation and regrowth using unsupervised K-Means clustering on multi-temporal Landsat imagery in Earth Engine.
+                        <strong>Flood and Multi-hazard Intelligence System</strong><br>
+                        Integrated platform utilizing SAR flood mapping, climate projections, and explainable ML to analyze and communicate hydro-climatic risks efficiently.
                     </p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Streamlit</span>
-                        <span class="tech-tag">Earth Engine</span>
-                        <span class="tech-tag">K-Means</span>
-                        <span class="tech-tag">Landsat</span>
+                        <span class="tech-tag">HEC-RAS/HMS</span>
+                        <span class="tech-tag">WRF</span>
+                        <span class="tech-tag">Explainable ML</span>
                     </div>
-                    <a href="https://aiforestdetection-xwmbbzvquwbkwetrjgf2e7.streamlit.app/" target="_blank" class="project-link">Live Demo <i class="fas fa-arrow-right"></i></a>
-                    <a href="https://github.com/explolar/Ai_Forest_Detection" target="_blank" class="project-link">GitHub <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="card project-card" style="border-top: 4px solid var(--secondary);">
-                    <h3>AI Career Placement Coach and Counterfactual Engine</h3>
+                    <h3>Terralens</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
-                        <strong>"Don't just predict failure. Fix it."</strong><br>
-                        Actionable AI system that predicts placement probability and uses a genetic algorithm to generate realistic counterfactual plans for improving student outcomes.
+                        <strong>Climate-Risk Communication Platform</strong><br>
+                        Climate intelligence platform combining CMIP6 projections, geospatial analytics, and agentic AI systems to evaluate climate risk under future SSP scenarios.
                     </p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Streamlit</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Genetic Algorithm</span>
+                        <span class="tech-tag">Next.js 16</span>
+                        <span class="tech-tag">Agentic AI (Llama 3.3)</span>
+                        <span class="tech-tag">Geospatial Analytics</span>
                     </div>
-                    <a href="https://placementpredictor-irbrr8lqtnarybgk2d84xr.streamlit.app/" target="_blank" class="project-link">Live Demo <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -361,50 +372,24 @@
             
             <div class="card" style="border-left: 5px solid var(--primary); margin-bottom: 30px;">
                 <h3 style="margin-bottom: 20px; font-size: 1.4rem;">Publications</h3>
+                
+                <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+                    <div style="background: #e0f2fe; color: var(--primary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fas fa-scroll" style="font-size: 1.2rem;"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin: 0; font-size: 1.15rem; color: var(--primary-dark);">Design, Implementation, and Performance Assessment of an Ultrasonic-Guided Bluetooth-Controlled Spraying Rover for Vegetable Crop Rows</h4>
+                    </div>
+                </div>
+
                 <div style="display: flex; gap: 20px; align-items: flex-start;">
                     <div style="background: #e0f2fe; color: var(--primary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                         <i class="fas fa-scroll" style="font-size: 1.2rem;"></i>
                     </div>
                     <div>
-                        <h4 style="margin: 0; font-size: 1.15rem; color: var(--primary-dark);">Design, Implementation, and Performance Assessment of an Ultrasonic-Guided Bluetooth-Controlled Spraying Rover</h4>
-                        <p style="color: var(--text-muted); margin: 5px 0 10px 0;"><strong>Journal of AgriSearch</strong> • Dec 2025</p>
-                        <p style="font-size: 0.95rem; margin-bottom: 15px;">
-                            Developed and field-tested an automated precision spraying rover, improving spraying accuracy and operator safety.
-                        </p>
-                        <a href="https://journal.jsure.org.in/index.php/jas/article/view/1628" target="_blank" class="project-link">Read Paper <i class="fas fa-external-link-alt"></i></a>
+                        <h4 style="margin: 0; font-size: 1.15rem; color: var(--primary-dark);">Nutritional Evaluation of Beetroot Dried using Novel Thermal Storage-based Passive Solar Dryers</h4>
                     </div>
                 </div>
-            </div>
-
-            <div class="card" style="border-left: 5px solid var(--accent);">
-                <h3 style="margin-bottom: 20px; font-size: 1.4rem;">Conference Presentations</h3>
-                
-                <div class="conf-item">
-                    <div class="conf-icon"><i class="fas fa-microphone-alt"></i></div>
-                    <div>
-                        <h4 style="margin: 0; font-size: 1.1rem;">58th ISAE Annual Convention & International Symposium</h4>
-                        <div style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px;">
-                            <strong>Parbhani, Maharashtra</strong> • Nov 2024
-                        </div>
-                        <p style="font-size: 0.95rem; margin: 0;">
-                            Presented research paper on <strong>Advanced Thermal Energy Storage (TES) Technologies</strong>, covering innovative materials and sustainability challenges.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="conf-item">
-                    <div class="conf-icon"><i class="fas fa-users"></i></div>
-                    <div>
-                        <h4 style="margin: 0; font-size: 1.1rem;">35th National Convention of Agricultural Engineers (IEI)</h4>
-                        <div style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px;">
-                            <strong>JNKVV, Jabalpur</strong>
-                        </div>
-                        <p style="font-size: 0.95rem; margin: 0;">
-                            Presented paper: <em>"Design and Development of Automated Fertigation System using IoT"</em>. Demonstrated 38.5% water savings over flood irrigation.
-                        </p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -413,13 +398,48 @@
         <div class="container hidden">
             <h2 class="section-title">Professional Experience</h2>
             <div class="card">
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="time-badge">May 2026 - Present</span>
+                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Research Intern</h3>
+                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Indian Institute of Tropical Meteorology | Pune</div>
+                    <p style="font-size: 0.95rem; color: #555;">
+                        Working on ML-based bias correction of INSAT precipitation products using weather radar observations. Analyzing large-scale satellite and CREF radar datasets for extreme rainfall assessment and spatiotemporal climate analytics.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="time-badge">Jan 2026 - Present</span>
+                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Research Intern</h3>
+                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">EXPERIQS PRIVATE LIMITED</div>
+                    <p style="font-size: 0.95rem; color: #555;">
+                        Developing Terra-shield and TerrAI platforms using Google Earth Engine, spatial cross-validation, and deep learning. Executed flood modelling for Kullu-Manali (HEC-HMS/RAS) under future climate scenarios and assessed multi-hazard risks in Satara.
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="time-badge">Mar 2026 - Present</span>
+                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Consultant</h3>
+                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">APDIGI</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="time-badge">Jan 2026 - Present</span>
+                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Pg representative</h3>
+                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Entrepreneurship Cell, IIT Kharagpur</div>
+                </div>
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Aug 2024 - Nov 2024</span>
-                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Research Intern</h3>
-                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">SPRERI | Anand, Gujarat</div>
+                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Intern</h3>
+                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">SPRERI | Anand</div>
                     <p style="font-size: 0.95rem; color: #555;">
-                        Worked on solar thermal systems, nanofluids, PCMs, and thermal energy storage. Conducted experimental evaluation for solar drying and energy efficiency.
+                        Developed nano-based Phase Change Materials (PCMs) and nanofluids for solar thermal energy storage. Conducted DSC and experimental thermal analysis for system enhancement.
                     </p>
                 </div>
 
@@ -427,34 +447,14 @@
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Jun 2024</span>
                     <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Summer Intern</h3>
-                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Swaraj Tractors | Jharkhand</div>
-                    <p style="font-size: 0.95rem; color: #555;">
-                        Analyzed sales performance, dealer management, and customer engagement strategies for tractor marketing.
-                    </p>
-                </div>
-
-                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <span class="time-badge">Jun 2023</span>
-                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Trainee</h3>
-                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">NERFMTTI</div>
-                    <p style="font-size: 0.95rem; color: #555;">
-                         Training on basic farm machinery operation and mechanization standards.
-                    </p>
+                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Swaraj Tractors</div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <span class="time-badge">Aug 2022 - Sep 2022</span>
-                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Teaching Intern</h3>
-                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">ConnectFor (Remote)</div>
-                </div>
-
-                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <span class="time-badge">Jun 2022 - Aug 2022</span>
-                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Student Ambassador</h3>
-                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Internshala</div>
+                    <span class="time-badge">Jun 2023</span>
+                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Trainee</h3>
+                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">NERFMTTI</div>
                 </div>
 
             </div>
@@ -468,14 +468,20 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Jul 2025 - May 2027</span>
-                    <h3 style="margin:5px 0; font-size: 1.15rem;">M.Tech in Land and Water Resources Engineering</h3>
-                    <div style="font-style:italic; color:#777;">Indian Institute of Technology (IIT), Kharagpur</div>
+                    <h3 style="margin:5px 0; font-size: 1.15rem;">Master of Technology - MTech, Land and Water Resource Engineering</h3>
+                    <div style="font-style:italic; color:#777;">Indian Institute of Technology, Kharagpur</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Jun 2021 - Jun 2025</span>
-                    <h3 style="margin:5px 0; font-size: 1.15rem;">B.Tech in Agricultural Engineering</h3>
+                    <h3 style="margin:5px 0; font-size: 1.15rem;">Bachelor of Technology - BTech, Agriculture engineering</h3>
                     <div style="font-style:italic; color:#777;">Anand Agricultural University, Anand</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="time-badge">Apr 2019 - Mar 2021</span>
+                    <h3 style="margin:5px 0; font-size: 1.15rem;">Intermediatte</h3>
+                    <div style="font-style:italic; color:#777;">Magadh University</div>
                 </div>
             </div>
         </div>
@@ -486,32 +492,16 @@
             <h2 class="section-title">Certifications</h2>
             <div class="cert-grid">
                 <div class="cert-item">
-                    <div class="cert-issuer">AlaskaX (edX)</div>
-                    <div style="font-weight: 700;">GIS Essentials</div>
-                    <div class="cert-date">Dec 2025</div>
+                    <div class="cert-issuer">Certification</div>
+                    <div style="font-weight: 700;">Geographic Information Systems (GIS) Essentials</div>
                 </div>
                 <div class="cert-item">
-                    <div class="cert-issuer">edX</div>
-                    <div style="font-weight: 700;">GIS Image Analysis in ArcGIS Pro</div>
-                    <div class="cert-date">Dec 2025</div>
+                    <div class="cert-issuer">Certification</div>
+                    <div style="font-weight: 700;">Data science methodology</div>
                 </div>
                 <div class="cert-item">
-                    <div class="cert-issuer">edX</div>
-                    <div style="font-weight: 700;">3D GIS</div>
-                    <div class="cert-date">Dec 2025</div>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-issuer">IIRS-ISRO</div>
-                    <div style="font-weight: 700;">AI/ML for Geodata Analysis</div>
-                    <div class="cert-date">Oct 2024</div>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-issuer">IBM</div>
-                    <div style="font-weight: 700;">Data Science Methodology</div>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-issuer">IBM</div>
-                    <div style="font-weight: 700;">Tools for Data Science</div>
+                    <div class="cert-issuer">Certification</div>
+                    <div style="font-weight: 700;">edX Verified Certificate for 3D GIS Tool for Data Science</div>
                 </div>
             </div>
         </div>
@@ -521,7 +511,7 @@
         <div class="container">
             <h3 style="margin-bottom: 20px;">Let's Build Something Sustainable.</h3>
             <div style="display: flex; justify-content: center; gap: 20px;">
-                <a href="https://linkedin.com/in/ankit-kumar-9b3b06228/" class="social-icon" style="background: rgba(255,255,255,0.1); color: white;"><i class="fab fa-linkedin"></i></a>
+                <a href="https://linkedin.com/in/ankit-kumar-9b3b06228" class="social-icon" style="background: rgba(255,255,255,0.1); color: white;"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:ankituday123@gmail.com" class="social-icon" style="background: rgba(255,255,255,0.1); color: white;"><i class="fas fa-envelope"></i></a>
                 <a href="https://github.com/explolar" class="social-icon" style="background: rgba(255,255,255,0.1); color: white;"><i class="fab fa-github"></i></a>
             </div>
@@ -558,7 +548,7 @@
         };
 
         // 2. Typing Effect
-        const typeText = ["GIS & Remote Sensing.", "Solar Energy Systems.", "Precision Agriculture.", "IoT & Automation."];
+        const typeText = ["GeoAI & Spatial ML.", "Climate Intelligence.", "Hydroinformatics.", "Earth Observation."];
         let count = 0;
         let index = 0;
         let currentText = "";
