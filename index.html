@@ -374,8 +374,8 @@
             </div>
         </div>
 
-        <div class="feature rv nolap">
-            <div class="visual tall" style="align-items:flex-start;"><div class="pipe"><div class="step"><span class="n">01</span><div class="box">Data ingestion<small>Landsat 8/9 · Sentinel-2 · MODIS LST · ERA5 · GHSL · SRTM · OSM</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">02</span><div class="box">Urban morphology<small>building height · FAR · H/W ratio · sky-view factor · LCZ</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">03</span><div class="box">LST modelling<small>physics-informed Random Forest / XGBoost + bias-corrected NDVI-NDBI slopes</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">04</span><div class="box">Heat stress<small>LST -> air temperature -> UTCI -> vulnerability index</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">05</span><div class="box">Intervention optimisation<small>GA · NSGA-II · Bayesian · InVEST valuation · SOLWEIG shading</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">06</span><div class="box">Dashboard<small>7-page Streamlit app reading outputs/</small></div></div></div><span class="cap">six-phase pipeline · Delhi NCR</span></div>
+        <div class="feature rv">
+            <div class="visual"><img src="assets/uhi_lst_utci.jpg" alt="Delhi NCR land surface temperature and UTCI heat stress maps"><span class="cap">Delhi NCR · LST and UTCI heat-stress outputs</span></div>
             <div class="info">
                 <span class="award"><i class="fas fa-trophy"></i> ISRO BAH 2026 Grand Finalist · second team</span>
                 <div class="over">Geospatial ML · Optimisation</div>
@@ -386,8 +386,8 @@
             </div>
         </div>
 
-        <div class="feature rv nolap">
-            <div class="visual tall" style="align-items:flex-start;"><div class="pipe"><div class="step"><span class="n">01</span><div class="box">Point cloud<small>SVAMITVA drone LiDAR, LAS/LAZ · 1.5B+ points · 10 villages, 5 states</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">02</span><div class="box">DTM generation<small>ground filtering -> 2 m Digital Terrain Model</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">03</span><div class="box">Hydrology<small>flow direction · accumulation · low-lying zones · natural flow paths</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">04</span><div class="box">Hotspot prediction<small>XGBoost + Isolation Forest + Attention U-Net · F1 0.74-0.90, AUC to 0.91</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">05</span><div class="box">Drainage design<small>graph MST network optimisation · IS-code sizing · cost estimate</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">06</span><div class="box">Delivery<small>FastAPI (8 endpoints) · COG / GPKG / KML · dashboard</small></div></div></div><span class="cap">LAS/LAZ -> DTM -> hotspots -> drainage network</span></div>
+        <div class="feature rv">
+            <div class="visual"><img src="assets/drainage_dtm_network.jpg" alt="Digital terrain model with D8 flow accumulation drainage network"><span class="cap">DTM · flow accumulation · drainage network</span></div>
             <div class="info">
                 <span class="award"><i class="fas fa-trophy"></i> MoPR AI/ML Hackathon · National Finalist (Top 38)</span>
                 <div class="over">Point Clouds · Deep Learning</div>
