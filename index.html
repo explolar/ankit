@@ -248,9 +248,9 @@
                 <h1>Ankit Kumar</h1>
                 <div class="typing-container"><span id="typewriter"></span></div>
                 <p class="hero-desc">
-                    M.Tech scholar in <strong>Land and Water Resources Engineering</strong> at IIT Kharagpur (GATE 2025 AIR-69).
-                    Grand Finalist at the <strong>ISRO Bharatiya Antariksh Hackathon 2026</strong> (Top 34 of 15,104 teams) and National Finalist at the MoPR AI/ML Hackathon.
-                    I build deep learning and remote-sensing systems for <strong>weather, flood and climate risk</strong> &mdash; from satellite data pipelines on HPC to deployed decision-support platforms &mdash; with first-author manuscripts on INSAT-3DR radar retrieval, flood modelling and land-use simulation.
+                    <strong>AI/ML &amp; Deep Learning engineer specialising in Earth systems</strong> &mdash; M.Tech, Land and Water Resources Engineering, IIT Kharagpur (GATE 2025 AIR-69).
+                    I build deep learning, generative AI and LLM-agent systems on satellite, radar and climate data: ConvLSTM weather forecasting, GAN/diffusion/NAFNet image reconstruction, WRF+ML bias correction, LLM software agents, and deployed GeoAI platforms.
+                    Twice <strong>ISRO Bharatiya Antariksh Hackathon 2026 Grand Finalist</strong> (both teams, Top 34 of 15,104) and <strong>MoPR AI/ML Hackathon National Finalist</strong>.
                 </p>
 
                 <div style="display: flex; align-items: center; flex-wrap: wrap;">
@@ -292,7 +292,7 @@
                 <div class="card">
                     <h3><i class="fas fa-server" style="color:#059669;"></i> Engineering &amp; MLOps</h3>
                     <ul class="skill-list" style="padding:0; list-style:none;">
-                        <li><i class="fas fa-check"></i> Python data pipelines, HPC (Arka, IITM)</li>
+                        <li><i class="fas fa-check"></i> Python data pipelines, HPC / SLURM / GPU clusters</li>
                         <li><i class="fas fa-check"></i> FastAPI, Next.js/TypeScript, Streamlit, Gradio, Leaflet/Folium</li>
                         <li><i class="fas fa-check"></i> Docker, GitHub Actions CI/CD, Google Cloud Run</li>
                         <li><i class="fas fa-check"></i> LLM tool-calling agents (Llama 3.3 / Groq), Arduino &amp; IoT</li>
@@ -320,9 +320,29 @@
                         <span class="tech-tag">PyTorch</span>
                         <span class="tech-tag">NAFNet</span>
                         <span class="tech-tag">Diffusion</span>
+                        <span class="tech-tag">GenAI</span>
                         <span class="tech-tag">Gradio</span>
                     </div>
                     <a href="https://github.com/explolar/NIRMRGH" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
+                </div>
+
+                <div class="card project-card" style="border-top: 4px solid var(--danger);">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                        <h3 style="margin: 0;">VyomJal &mdash; Climate Digital Twin</h3>
+                        <span style="background: #fee2e2; color: #b91c1c; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; margin-left: 10px;">🏆 ISRO BAH 2026 Finalist</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">
+                        <strong>AI-powered digital twin of India&rsquo;s climate (Madhya Pradesh pilot, BAH PS-5)</strong><br>
+                        Fuses IMD observations, ERA5/ERA5-Land reanalysis, DEM and land cover at 0.25&deg;; a ConvLSTM encoder&ndash;decoder learns spatio-temporal dynamics and serves 1&ndash;5 day rainfall and Tmax forecasts. Two lineages: PyTorch model (2020&ndash;25) behind a Flask/Plotly what-if scenario dashboard, and an 11-channel TensorFlow model trained on 30 years (1996&ndash;2025) on a GPU cluster. Second finalist team at ISRO&ndash;NRSC.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">ConvLSTM</span>
+                        <span class="tech-tag">PyTorch / TensorFlow</span>
+                        <span class="tech-tag">ERA5 + IMD</span>
+                        <span class="tech-tag">GPU Cluster</span>
+                        <span class="tech-tag">Flask</span>
+                    </div>
+                    <a href="https://github.com/explolar/vyomjal" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
                 </div>
 
                 <div class="card project-card" style="border-top: 4px solid var(--danger);">
@@ -332,7 +352,7 @@
                     </div>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
                         <strong>AI-driven DTM &amp; drainage network design from point clouds</strong><br>
-                        End-to-end pipeline converting drone point-cloud data into terrain models and drainage designs: XGBoost, Isolation Forest and Attention U-Net for waterlogging prediction plus graph-based MST optimisation. Top 38 nationally, MoPR AI/ML Hackathon (IIT Tirupati Navavishkar i-Hub).
+                        End-to-end pipeline turning SVAMITVA drone LiDAR (1.5B+ points, 10 villages, 5 states) into 2 m DTMs, flow paths, waterlogging hotspots and costed drainage designs: XGBoost + Isolation Forest + Attention U-Net (hotspot F1 0.74&ndash;0.90, AUC up to 0.91, cross-village transfer AUC 0.86), MST network optimisation, FastAPI with 8 endpoints, COG/GPKG/KML outputs. Top 38 nationally, MoPR Geospatial Intelligence Hackathon (IIT Tirupati Navavishkar i-Hub).
                     </p>
                     <div class="tech-stack">
                         <span class="tech-tag">Point Cloud</span>
@@ -341,6 +361,43 @@
                         <span class="tech-tag">Graph MST</span>
                     </div>
                     <a href="https://github.com/explolar/drainage_ai_python" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
+                </div>
+
+                <div class="card project-card" style="border-top: 4px solid var(--accent);">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                        <h3 style="margin: 0;">Parishkar &mdash; LLM Software-Engineering Agent</h3>
+                        <span style="background: #fef3c7; color: #b45309; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; margin-left: 10px;">🤖 GenAI</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">
+                        <strong>Bounded coding agent evaluated on SWE-bench Lite with the official harness</strong><br>
+                        Retrieve &rarr; plan &rarr; edit &rarr; test &rarr; patch loop built as a LangGraph state machine with a least-privilege MCP tool server (path containment, command allowlisting, audit logs) and Docker-isolated test runs. Three agent arms graded externally on 40 instances (up to 7/40 resolved; 42.5% applying patches with Gemini). Retrieval ablation across six arms on all 300 instances (BM25 vs dense embeddings, fusion, cost) with run-to-run variance reported.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">LangGraph</span>
+                        <span class="tech-tag">MCP</span>
+                        <span class="tech-tag">Gemini / Groq</span>
+                        <span class="tech-tag">BM25 + Embeddings</span>
+                        <span class="tech-tag">SWE-bench</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+
+                <div class="card project-card" style="border-top: 4px solid var(--primary);">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                        <h3 style="margin: 0;">WRF + ML Precipitation Bias Correction</h3>
+                        <span style="background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; margin-left: 10px;">🎓 M.Tech Thesis</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">
+                        <strong>30-year monsoon climatology over Bihar &amp; Jharkhand (1991&ndash;2020 JJAS)</strong><br>
+                        WRF 4.5.2 nested domain (India d01 / Bihar+Jharkhand d02) with literature-selected physics, run as SLURM array jobs on HPC; wrfout + IMD gridded rainfall extracted into an ML dataset. Benchmarks quantile mapping, Random Forest, XGBoost and a distributional MLP (CSGD, Monte-Carlo CRPS loss) for probabilistic bias correction with year-holdout CV and calibration diagnostics.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">WRF / WPS</span>
+                        <span class="tech-tag">SLURM HPC</span>
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">Distributional MLP</span>
+                        <span class="tech-tag">ERA5 / IMD</span>
+                    </div>
                 </div>
 
                 <div class="card project-card" style="border-top: 4px solid var(--primary);">
@@ -355,6 +412,7 @@
                         <span class="tech-tag">Docker</span>
                         <span class="tech-tag">GCP Cloud Run</span>
                         <span class="tech-tag">Llama 3.3</span>
+                        <span class="tech-tag">GenAI Agent</span>
                     </div>
                     <a href="https://github.com/explolar/Terra-shield" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
                 </div>
@@ -502,42 +560,10 @@
 
     <section id="research">
         <div class="container hidden">
-            <h2 class="section-title">Publications &amp; Manuscripts</h2>
+            <h2 class="section-title">Publications</h2>
 
             <div class="card" style="border-left: 5px solid var(--primary); margin-bottom: 30px;">
-                <h3 style="margin-bottom: 20px; font-size: 1.4rem;">First-author work</h3>
-
-                <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
-                    <div style="background: #e0f2fe; color: var(--primary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-cloud-sun-rain" style="font-size: 1.2rem;"></i></div>
-                    <div>
-                        <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary-dark);">Deep Learning Reconstruction of Radar Composite Reflectivity from INSAT-3DR Geostationary Imagery: A Comparative Study of U-Net, GAN-Refined, and Transformer Architectures</h4>
-                        <div style="color: var(--text-muted); font-size: 0.9rem;">Kumar A, Prabhu A, Arya S, et al. &mdash; International Journal of Climatology (Special Issue), communicated Aug 2026, IITM Pune</div>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
-                    <div style="background: #e0f2fe; color: var(--primary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-satellite-dish" style="font-size: 1.2rem;"></i></div>
-                    <div>
-                        <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary-dark);">Physics-informed CREF Retrieval from INSAT-3DR over Central India with Calibrated Diffusion Downscaling to 1 km</h4>
-                        <div style="color: var(--text-muted); font-size: 0.9rem;">Manuscript in preparation (2026) &mdash; IITM Pune</div>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
-                    <div style="background: #e0f2fe; color: var(--primary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-water" style="font-size: 1.2rem;"></i></div>
-                    <div>
-                        <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary-dark);">Coupled Hydrologic-Hydraulic Modelling and Basin-wide Susceptibility Screening of Flood Hazard and Road Disruption in the Upper Beas Basin</h4>
-                        <div style="color: var(--text-muted); font-size: 0.9rem;">Manuscript under revision (2026)</div>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
-                    <div style="background: #e0f2fe; color: var(--primary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-map" style="font-size: 1.2rem;"></i></div>
-                    <div>
-                        <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary-dark);">Multi-Cast Validation Framework for Evaluating CA-ANN Land-Use Simulations in West Bengal, India</h4>
-                        <div style="color: var(--text-muted); font-size: 0.9rem;">Manuscript in review (2026) &mdash; with Ranjan Kumar, IIT Kharagpur</div>
-                    </div>
-                </div>
+                <h3 style="margin-bottom: 20px; font-size: 1.4rem;">Published (first author)</h3>
 
                 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
                     <div style="background: #dcfce7; color: var(--secondary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-scroll" style="font-size: 1.2rem;"></i></div>
@@ -586,7 +612,7 @@
                     <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Indian Institute of Tropical Meteorology (IITM), Ministry of Earth Sciences | Pune &mdash; Supervisor: Dr. Amita Prabhu, Scientist-F, Atmospheric Research Testbed</div>
                     <p style="font-size: 0.95rem; color: #555;">
                         Mapped 9-channel INSAT-3DR imagery to radar composite reflectivity over a 440 km monsoon-core domain (ART-Bhopal C-Pol radar) across 4 monsoon seasons; benchmarked U-Net, GAN-refined and Transformer models under one pipeline &mdash; spatial-context models explained 77&ndash;78% of variance vs 24% for pixelwise fits. GAN-refined model improved convective-core CSI by 8.6% and cut false alarms by 13.7%; physics-informed U-Net with differentiable categorical loss reached CSI@35 = 0.46 (POD 0.65); calibrated diffusion downscaling to 1 km recovered 25.7 vs 25.0 true convective cells per scene.
-                        Built end-to-end satellite + radar pipelines on the Arka HPC and developed <strong>NIRA</strong>, a near-real-time INSAT&ndash;radar assimilation dashboard; scene-level paired bootstrap testing, conformal risk control and pre-registered experiment design.
+                        Built end-to-end satellite + radar pipelines on HPC and developed <strong>NIRA</strong>, a near-real-time INSAT&ndash;radar assimilation dashboard; scene-level paired bootstrap testing, conformal risk control and pre-registered experiment design.
                     </p>
                 </div>
 
@@ -800,7 +826,7 @@
         };
 
         // 2. Typing Effect
-        const typeText = ["Deep Learning for Earth Observation.", "GeoAI & Climate Risk.", "Hydroinformatics.", "Satellite Meteorology."];
+        const typeText = ["AI / ML / Deep Learning.", "Generative AI & LLM Agents.", "Earth Observation & Climate.", "GeoAI Platforms."];
         let count = 0;
         let index = 0;
         let currentText = "";
