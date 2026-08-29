@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ankit Kumar | AI/ML for Earth Systems</title>
-    <meta name="description" content="Ankit Kumar — AI/ML & deep learning engineer specialising in Earth systems: satellite meteorology, GeoAI, generative AI, climate risk. IIT Kharagpur.">
+    <meta name="description" content="Ankit Kumar - AI/ML & deep learning engineer specialising in Earth systems: satellite meteorology, GeoAI, generative AI, climate risk. IIT Kharagpur.">
     <meta name="theme-color" content="#0a192f">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -97,15 +97,18 @@
 
         /* ---- FEATURED PROJECTS ---- */
         .feature { display:grid; grid-template-columns: repeat(12, 1fr); align-items:center; margin-bottom: 90px; }
-        .feature .visual { grid-column: 1 / 8; grid-row: 1; position:relative; border-radius: 6px; overflow:hidden; box-shadow: var(--shadow); background: var(--bg-2); min-height: 320px; display:flex; align-items:center; justify-content:center; }
+        .feature .visual { grid-column: 1 / 8; grid-row: 1; position:relative; border-radius: 6px; overflow:hidden; box-shadow: var(--shadow); background: var(--bg-2); min-height: 320px; max-height: 380px; display:flex; align-items:center; justify-content:center; }
         .feature .visual .art { position:absolute; inset:0; }
+        .feature .visual img { width:100%; height:100%; object-fit:cover; display:block; filter: saturate(.85); transition: filter .3s, transform .4s; }
+        .feature:hover .visual img { filter:none; transform: scale(1.02); }
+        .feature .visual .cap { background: rgba(10,25,47,.75); padding: 4px 8px; border-radius: 4px; }
         .feature .visual .big { position:relative; font-family: var(--mono); color: var(--accent); font-size: 4.5rem; opacity:.35; }
         .feature .visual .cap { position:absolute; left: 20px; bottom: 16px; font-family: var(--mono); font-size:.72rem; color: var(--text-2); }
         .feature .info { grid-column: 7 / -1; grid-row: 1; text-align: right; z-index: 2; }
         .feature:nth-of-type(even) .visual { grid-column: 6 / -1; }
         .feature:nth-of-type(even) .info { grid-column: 1 / 7; text-align:left; }
         .feature .over { font-family: var(--mono); font-size: .8rem; color: var(--accent); margin-bottom: 8px; }
-        .feature h3 { font-size: 1.55rem; margin-bottom: 18px; }
+        .feature h3 { font-size: 1.55rem; margin-bottom: 18px; text-shadow: 0 2px 12px rgba(2,12,27,.8); }
         .feature h3 a { color: var(--heading); }
         .feature h3 a:hover { color: var(--accent); text-decoration:none; }
         .feature .desc { background: var(--bg-2); padding: 24px; border-radius: 6px; box-shadow: var(--shadow); color: var(--text-2); font-size: .95rem; line-height: 1.6; }
@@ -248,7 +251,7 @@
             <h1>Ankit Kumar.</h1>
             <h2>I build <span class="tw" id="tw"></span></h2>
             <p>
-                AI/ML &amp; deep learning engineer specialising in <strong>Earth systems</strong> &mdash; M.Tech, Land &amp; Water Resources Engineering at IIT Kharagpur (GATE 2025 AIR-69).
+                AI/ML &amp; deep learning engineer specialising in <strong>Earth systems</strong> - M.Tech, Land &amp; Water Resources Engineering at IIT Kharagpur (GATE 2025 AIR-69).
                 I train generative, vision and spatio-temporal models on satellite, radar and climate data, and ship them as GeoAI platforms and LLM agents.
                 Twice <strong>ISRO Bharatiya Antariksh Hackathon 2026 Grand Finalist</strong> and <strong>MoPR AI/ML Hackathon National Finalist</strong>.
             </p>
@@ -265,7 +268,7 @@
                 <div class="stat"><b>2&times;</b><span>ISRO BAH 2026 finalist</span></div>
                 <div class="stat"><b>AIR 69</b><span>GATE 2025</span></div>
                 <div class="stat"><b>16+</b><span>AI / GeoAI projects</span></div>
-                <div class="stat"><b>3</b><span>published papers</span></div>
+                <div class="stat"><b>2</b><span>first-author papers</span></div>
             </div>
         </div>
         <div class="photo-wrap"><img src="Profile_Photo.png" alt="Ankit Kumar"></div>
@@ -277,7 +280,7 @@
         <h2 class="sec-title"><span class="num">01.</span> About Me</h2>
         <div style="max-width: 760px; color: var(--text-2);">
             <p style="margin-top:0;">I started as an agricultural engineer building IoT fertigation systems and an autonomous spraying rover, then moved into the data side of Earth science. Today I work where <strong style="color:var(--text)">deep learning meets weather, water and climate</strong>: reconstructing radar reflectivity from INSAT-3DR at IITM Pune, removing clouds from LISS-IV imagery with NAFNet + diffusion for ISRO, and quantifying physical climate risk for industry at EXPERIQS.</p>
-            <p>I care about models that are <strong style="color:var(--text)">evaluated honestly</strong> &mdash; spatial cross-validation, calibration, ablations, pre-registered designs &mdash; and about shipping them: FastAPI + Next.js platforms on Cloud Run, LLM tool-calling agents, HPC pipelines. My M.Tech thesis builds a 30-year WRF + ML precipitation bias-correction climatology over Bihar &amp; Jharkhand.</p>
+            <p>I care about models that are <strong style="color:var(--text)">evaluated honestly</strong> - spatial cross-validation, calibration, ablations, pre-registered designs - and about shipping them: FastAPI + Next.js platforms on Cloud Run, LLM tool-calling agents, HPC pipelines. My M.Tech thesis builds a 30-year WRF + ML precipitation bias-correction climatology over Bihar &amp; Jharkhand.</p>
             <p>Currently open to <strong style="color:var(--text)">ML / GeoAI / climate-tech roles and research collaborations</strong>.</p>
         </div>
     </div>
@@ -344,11 +347,11 @@
         <h2 class="sec-title rv"><span class="num">03.</span> Featured Projects</h2>
 
         <div class="feature rv">
-            <div class="visual"><div class="art" style="background: radial-gradient(circle at 30% 30%, rgba(100,255,218,.25), transparent 55%), linear-gradient(135deg,#0f2a4a,#0a192f);"></div><i class="fas fa-cloud big"></i><span class="cap">Resourcesat-2 LISS-IV · NAFNet + diffusion</span></div>
+            <div class="visual"><img src="assets/nirmegh_three_pane.jpg" alt="NIRMEGH: cloudy LISS-IV input, clear reference, model output"><span class="cap">cloudy input · reference · NIRMEGH output</span></div>
             <div class="info">
                 <span class="award"><i class="fas fa-trophy"></i> ISRO BAH 2026 Grand Finalist · Top 34 / 15,104</span>
                 <div class="over">Generative AI · Computer Vision</div>
-                <h3><a href="https://github.com/explolar/NIRMRGH" target="_blank">NIRMEGH &mdash; Cloud Removal for Satellite Imagery</a></h3>
+                <h3><a href="https://github.com/explolar/NIRMRGH" target="_blank">NIRMEGH - Cloud Removal for Satellite Imagery</a></h3>
                 <div class="desc">NAFNet-based residual cloud-removal model (<b>29.2M params</b>) with a diffusion-sampler ensemble for LISS-IV scenes. <b>+3.01 dB PSNR</b> on cloud-affected pixels (34.13 vs 31.12 dB baseline) and +6.09 dB across the 1,238-patch validation set; found and fixed an anti-correlated evaluation-mask bug that had hidden a model-capping flaw. 30-hour Grand Finale at ISRO&ndash;NRSC Hyderabad.</div>
                 <div class="tl"><span>PyTorch</span><span>NAFNet</span><span>Diffusion</span><span>Gradio</span></div>
                 <div class="lnk"><a href="https://github.com/explolar/NIRMRGH" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></div>
@@ -372,7 +375,7 @@
             <div class="info">
                 <span class="award"><i class="fas fa-trophy"></i> MoPR AI/ML Hackathon · National Finalist (Top 38)</span>
                 <div class="over">Point Clouds · Deep Learning</div>
-                <h3><a href="https://github.com/explolar/drainage_ai_python" target="_blank">Drainage Mitra &mdash; AI DTM &amp; Drainage Design</a></h3>
+                <h3><a href="https://github.com/explolar/drainage_ai_python" target="_blank">Drainage Mitra - AI DTM &amp; Drainage Design</a></h3>
                 <div class="desc">Turns <b>1.5B+ LiDAR points</b> into 2 m DTMs, flow paths, waterlogging hotspots and costed drainage networks. XGBoost + Isolation Forest + Attention U-Net (<b>hotspot F1 0.74&ndash;0.90, AUC up to 0.91</b>, cross-village transfer AUC 0.86), MST network optimisation, FastAPI with 8 endpoints, OGC-compliant COG / GPKG / KML outputs. IIT Tirupati Navavishkar i-Hub.</div>
                 <div class="tl"><span>Attention U-Net</span><span>XGBoost</span><span>LiDAR</span><span>FastAPI</span><span>Graph MST</span></div>
                 <div class="lnk"><a href="https://github.com/explolar/drainage_ai_python" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></div>
@@ -380,11 +383,23 @@
         </div>
 
         <div class="feature rv">
+            <div class="visual"><img src="assets/wrf_domains.jpg" alt="WRF nested domains: India d01 at 9 km, Bihar and Jharkhand d02 at 3 km"><span class="cap">WRF d01 9 km India · d02 3 km Bihar + Jharkhand</span></div>
+            <div class="info">
+                <span class="award" style="color:var(--accent); background:var(--accent-dim); border-color:var(--accent-dim);"><i class="fas fa-graduation-cap"></i> M.Tech Thesis, IIT Kharagpur</span>
+                <div class="over">Numerical Weather Prediction · Probabilistic ML</div>
+                <h3>WRF + ML Precipitation Bias Correction</h3>
+                <div class="desc"><b>30-year JJAS monsoon climatology (1991-2020)</b> over Bihar and Jharkhand: WRF 4.5.2 two-way nested domain (9 km India / 3 km B+J, 40 levels) with literature-selected physics, run as SLURM array jobs on HPC. WRF output and IMD gridded rainfall extracted into an ML dataset; <b>quantile mapping, Random Forest, XGBoost and a CSGD distributional MLP</b> (Monte-Carlo CRPS loss) benchmarked with year-holdout CV and calibration diagnostics.</div>
+                <div class="tl"><span>WRF / WPS</span><span>SLURM HPC</span><span>XGBoost</span><span>Distributional MLP</span><span>ERA5 / IMD</span></div>
+                <div class="lnk"></div>
+            </div>
+        </div>
+
+        <div class="feature rv">
             <div class="visual"><div class="art" style="background: radial-gradient(circle at 60% 30%, rgba(52,211,153,.25), transparent 55%), linear-gradient(135deg,#0d2137,#0a192f);"></div><i class="fas fa-shield-halved big"></i><span class="cap">FastAPI · Next.js · Cloud Run · Llama 3.3 agent</span></div>
             <div class="info">
                 <div class="over">Full-stack GeoAI · LLM Agent</div>
-                <h3><a href="https://github.com/explolar/Terra-shield" target="_blank">TerraShield AI &mdash; Climate Risk &amp; Resilience Platform</a></h3>
-                <div class="desc">Solo-built <b>9-module platform</b> (FastAPI async backend, Next.js/Leaflet frontend, Google Earth Engine) covering flood, drought, groundwater, weather and infrastructure risk for all <b>482 Indian districts</b>. ML risk scoring (GBM / XGBoost / RF + SHAP), AHP-MCDM susceptibility, an operations-research decision module and <b>GeoCopilot</b> &mdash; a guardrailed Llama 3.3 tool-calling agent orchestrating the APIs. 40+ tests, GitHub Actions CI/CD, Docker to Cloud Run.</div>
+                <h3><a href="https://github.com/explolar/Terra-shield" target="_blank">TerraShield AI - Climate Risk &amp; Resilience Platform</a></h3>
+                <div class="desc">Solo-built <b>9-module platform</b> (FastAPI async backend, Next.js/Leaflet frontend, Google Earth Engine) covering flood, drought, groundwater, weather and infrastructure risk for all <b>482 Indian districts</b>. ML risk scoring (GBM / XGBoost / RF + SHAP), AHP-MCDM susceptibility, an operations-research decision module and <b>GeoCopilot</b> - a guardrailed Llama 3.3 tool-calling agent orchestrating the APIs. 40+ tests, GitHub Actions CI/CD, Docker to Cloud Run.</div>
                 <div class="tl"><span>FastAPI</span><span>Next.js</span><span>Docker</span><span>GCP Cloud Run</span><span>Llama 3.3 / Groq</span></div>
                 <div class="lnk"><a href="https://github.com/explolar/Terra-shield" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></div>
             </div>
@@ -405,28 +420,21 @@
 
             <div class="pcard" data-c="genai research">
                 <div class="top"><i class="fas fa-folder-open"></i><div class="lk"></div></div>
-                <h4>Parishkar &mdash; LLM Software-Engineering Agent</h4>
+                <h4>Parishkar - LLM Software-Engineering Agent</h4>
                 <p>Bounded coding agent on SWE-bench Lite, graded by the official harness. LangGraph retrieve&rarr;plan&rarr;edit&rarr;test loop, least-privilege MCP tool server, Docker-isolated tests; up to 7/40 resolved. Six-arm retrieval ablation (BM25 vs dense) over all 300 instances with cost and variance reported.</p>
                 <div class="tl"><span>LangGraph</span><span>MCP</span><span>Gemini / Groq</span><span>SWE-bench</span></div>
             </div>
 
-            <div class="pcard" data-c="climate research">
-                <div class="top"><i class="fas fa-folder-open"></i><div class="lk"><span class="mono" style="font-size:.7rem;">M.Tech Thesis</span></div></div>
-                <h4>WRF + ML Precipitation Bias Correction</h4>
-                <p>30-year JJAS climatology (1991&ndash;2020) over Bihar &amp; Jharkhand: WRF 4.5.2 nested domain with literature-selected physics on SLURM HPC; QM, RF, XGBoost and a CSGD distributional MLP (CRPS loss) benchmarked against IMD gridded rainfall with year-holdout CV and calibration diagnostics.</p>
-                <div class="tl"><span>WRF / WPS</span><span>SLURM</span><span>XGBoost</span><span>Distributional MLP</span></div>
-            </div>
-
-            <div class="pcard" data-c="climate dl">
+                        <div class="pcard" data-c="climate dl">
                 <div class="top"><i class="fas fa-folder-open"></i><div class="lk"><a href="https://github.com/explolar/vyomjal" target="_blank"><i class="fab fa-github"></i></a></div></div>
-                <h4><a href="https://github.com/explolar/vyomjal" target="_blank">VyomJal &mdash; Climate Digital Twin</a></h4>
+                <h4><a href="https://github.com/explolar/vyomjal" target="_blank">VyomJal - Climate Digital Twin</a></h4>
                 <p>ConvLSTM encoder&ndash;decoder fusing IMD observations, ERA5/ERA5-Land, DEM and land cover at 0.25&deg; to forecast 1&ndash;5 day rainfall and Tmax for Madhya Pradesh; PyTorch model behind a Flask what-if dashboard plus an 11-channel TensorFlow model trained on 30 years on a GPU cluster.</p>
                 <div class="tl"><span>ConvLSTM</span><span>ERA5 + IMD</span><span>Flask</span></div>
             </div>
 
             <div class="pcard" data-c="eo dl platform">
                 <div class="top"><i class="fas fa-folder-open"></i><div class="lk"><a href="https://github.com/explolar/soil_prop" target="_blank"><i class="fab fa-github"></i></a></div></div>
-                <h4><a href="https://github.com/explolar/soil_prop" target="_blank">TerrAI &mdash; Soil Intelligence Platform</a></h4>
+                <h4><a href="https://github.com/explolar/soil_prop" target="_blank">TerrAI - Soil Intelligence Platform</a></h4>
                 <p>Predicts soil properties from satellite, weather and terrain data with 13+ benchmarked models (classical ML, deep tabular, deep kriging, spatial CNNs), spatial block CV, Area-of-Applicability, and NASA-IBM Prithvi-EO ViT backbones with SHAP and calibrated uncertainty.</p>
                 <div class="tl"><span>PyTorch</span><span>Prithvi-EO</span><span>FastAPI</span></div>
             </div>
@@ -454,7 +462,7 @@
 
             <div class="pcard" data-c="eo dl research">
                 <div class="top"><i class="fas fa-folder-open"></i><div class="lk"><a href="https://github.com/explolar/CASim-ANN" target="_blank"><i class="fab fa-github"></i></a></div></div>
-                <h4><a href="https://github.com/explolar/CASim-ANN" target="_blank">CASim-ANN &mdash; Land-Use Simulation</a></h4>
+                <h4><a href="https://github.com/explolar/CASim-ANN" target="_blank">CASim-ANN - Land-Use Simulation</a></h4>
                 <p>FLUS-based Cellular Automata&ndash;ANN for West Bengal (85,286 km² at 30 m): hindcast OA 0.816, Kappa 0.731; a 5-strategy validation framework exposed Figure-of-Merit 0.161 hidden by high OA/Kappa. Kharagpur term project reached 86.8% OA, Kappa 0.78.</p>
                 <div class="tl"><span>FLUS</span><span>Earth Engine</span><span>rasterio</span></div>
             </div>
@@ -462,13 +470,13 @@
             <div class="pcard" data-c="eo">
                 <div class="top"><i class="fas fa-folder-open"></i><div class="lk"><a href="https://github.com/explolar/Ai_forestDetection" target="_blank"><i class="fab fa-github"></i></a></div></div>
                 <h4><a href="https://github.com/explolar/Ai_forestDetection" target="_blank">AI Forest Change Detection</a></h4>
-                <p>Live deforestation / regrowth mapping from multi-temporal Landsat 5&ndash;9 via GEE: automated cloud masking, &Delta;NDVI feature engineering and K-Means clustering into Loss / Stable / Gain &mdash; no training labels needed.</p>
+                <p>Live deforestation / regrowth mapping from multi-temporal Landsat 5&ndash;9 via GEE: automated cloud masking, &Delta;NDVI feature engineering and K-Means clustering into Loss / Stable / Gain - no training labels needed.</p>
                 <div class="tl"><span>Landsat</span><span>Earth Engine</span><span>K-Means</span></div>
             </div>
 
             <div class="pcard" data-c="dl eo">
                 <div class="top"><i class="fas fa-folder-open"></i><div class="lk"><a href="https://github.com/explolar/Cnn_tutorial" target="_blank"><i class="fab fa-github"></i></a></div></div>
-                <h4><a href="https://github.com/explolar/Cnn_tutorial" target="_blank">CNN for Flood Prediction &mdash; Teaching Platform</a></h4>
+                <h4><a href="https://github.com/explolar/Cnn_tutorial" target="_blank">CNN for Flood Prediction - Teaching Platform</a></h4>
                 <p>9-module interactive Streamlit course on SAR-based flood detection: single-neuron intuition to live PyTorch training with over/under-fitting diagnosis, live Sentinel-1 retrieval via GEE, and an auto-generated 38-slide lecture deck.</p>
                 <div class="tl"><span>PyTorch</span><span>Streamlit</span><span>Earth Engine</span></div>
             </div>
@@ -476,14 +484,14 @@
             <div class="pcard" data-c="research">
                 <div class="top"><i class="fas fa-folder-open"></i><div class="lk"></div></div>
                 <h4>Agri-IoT &amp; Robotics</h4>
-                <p>IoT-based automated fertigation system (40&ndash;55% VWC control, ~38.5% water savings; IEI National Convention) and an ultrasonic-guided, Bluetooth-controlled autonomous spraying rover for vegetable crop rows &mdash; published in Journal of AgriSearch.</p>
+                <p>IoT-based automated fertigation system (40&ndash;55% VWC control, ~38.5% water savings; IEI National Convention) and an ultrasonic-guided, Bluetooth-controlled autonomous spraying rover for vegetable crop rows - published in Journal of AgriSearch.</p>
                 <div class="tl"><span>Arduino</span><span>IoT</span><span>Fertigation</span></div>
             </div>
 
             <div class="pcard" data-c="climate eo">
                 <div class="top"><i class="fas fa-folder-open"></i><div class="lk"><a href="https://github.com/explolar/MOSFETCH" target="_blank"><i class="fab fa-github"></i></a></div></div>
                 <h4>Open-Source Tools</h4>
-                <p><a href="https://github.com/explolar/MOSFETCH" target="_blank">MOSFETCH</a> &mdash; INSAT-3D/3DR/3DS downloader from MOSDAC with resume/retry. <a href="https://github.com/explolar/WRF_Python_Scripts" target="_blank">WRF_Python_Scripts</a> &mdash; WRF visualisation suite. <a href="https://github.com/explolar/precip-index" target="_blank">precip-index</a> &mdash; SPI/SPEI drought indices. <a href="https://github.com/explolar/Climate_Change---Classification" target="_blank">Climate trend analysis</a> &mdash; Mann-Kendall tests.</p>
+                <p><a href="https://github.com/explolar/MOSFETCH" target="_blank">MOSFETCH</a> - INSAT-3D/3DR/3DS downloader from MOSDAC with resume/retry. <a href="https://github.com/explolar/WRF_Python_Scripts" target="_blank">WRF_Python_Scripts</a> - WRF visualisation suite. <a href="https://github.com/explolar/precip-index" target="_blank">precip-index</a> - SPI/SPEI drought indices. <a href="https://github.com/explolar/Climate_Change---Classification" target="_blank">Climate trend analysis</a> - Mann-Kendall tests.</p>
                 <div class="tl"><span>MOSDAC</span><span>WRF</span><span>SPI / SPEI</span></div>
             </div>
         </div>
@@ -508,7 +516,7 @@
                     <div class="sup">Radar &amp; Satellite Meteorology · Supervisor: Dr. Amita Prabhu, Scientist-F, Atmospheric Research Testbed · 3 research projects</div>
                     <ul>
                         <li><b>Satellite-to-radar retrieval:</b> mapped 9-channel INSAT-3DR geostationary imagery to radar composite reflectivity over a 440 km monsoon-core domain (ART-Bhopal C-Pol) across 4 monsoon seasons.</li>
-                        <li><b>Architecture benchmark:</b> U-Net, GAN-refined and Transformer models in one pipeline &mdash; spatial models explained 77&ndash;78% of variance vs 24% for pixelwise fits; GAN refinement lifted convective-core CSI by 8.6% and cut false alarms by 13.7%.</li>
+                        <li><b>Architecture benchmark:</b> U-Net, GAN-refined and Transformer models in one pipeline - spatial models explained 77&ndash;78% of variance vs 24% for pixelwise fits; GAN refinement lifted convective-core CSI by 8.6% and cut false alarms by 13.7%.</li>
                         <li><b>Physics-informed retrieval:</b> differentiable categorical loss reaching CSI@35 = 0.46 at POD = 0.65; ablation showed loss design mattered 39&times; more than 12 added physics channels.</li>
                         <li><b>Generative downscaling:</b> calibrated diffusion downscaling to 1 km recovered 25.7 vs 25.0 true convective cells per scene; conformal risk control, paired bootstrap tests, pre-registered design.</li>
                         <li><b>NIRA dashboard:</b> end-to-end satellite + radar pipelines on HPC and a near-real-time INSAT&ndash;radar assimilation and CREF visualisation platform.</li>
@@ -520,15 +528,15 @@
                     <div class="when">23 Jan 2026 &ndash; 30 Jun 2026 · Hybrid · IIT Bombay-based GeoAI startup</div>
                     <div class="sup">GeoAI · Physical Climate Risk · Hydrological Modelling · Soil Property Prediction</div>
                     <ul>
-                        <li><b>Physical Climate Risk Assessment</b> (CII PCRAF / TCFD-aligned) for a 225,000 m² Godrej &amp; Boyce plant: hazard &times; exposure &times; vulnerability for flood, heat, drought, landslide &mdash; 2.25% value-at-risk (₹7.2 Cr of ₹319 Cr), EAL ₹35 L&ndash;3.5 Cr, 1-in-100-yr PML ₹1.8 Cr.</li>
+                        <li><b>Physical Climate Risk Assessment</b> (CII PCRAF / TCFD-aligned) for a 225,000 m² Godrej &amp; Boyce plant: hazard &times; exposure &times; vulnerability for flood, heat, drought, landslide - 2.25% value-at-risk (₹7.2 Cr of ₹319 Cr), EAL ₹35 L&ndash;3.5 Cr, 1-in-100-yr PML ₹1.8 Cr.</li>
                         <li><b>Flood susceptibility:</b> 13-factor raster-stack classifier; RF chosen over LR / SVM (AUC 0.907 vs 0.79 / 0.67, OOB accuracy 0.848).</li>
-                        <li><b>Landslide susceptibility:</b> LightGBM with 11-fold leave-one-taluka-out spatial CV &mdash; AUC 0.946 (spatial CV 0.951 &plusmn; 0.039).</li>
+                        <li><b>Landslide susceptibility:</b> LightGBM with 11-fold leave-one-taluka-out spatial CV - AUC 0.946 (spatial CV 0.951 &plusmn; 0.039).</li>
                         <li><b>Hydrological modelling:</b> IMERG-forced HEC-HMS coupled to 2D HEC-RAS for the July 2023 upper Beas flood; AHP susceptibility screening and road-passability analysis; hazard maps in ArcGIS Pro.</li>
                         <li><b>GeoAI products:</b> AI-driven soil-property prediction and flood-risk intelligence with Sentinel-1/2, Google Earth Engine and ML; automated geospatial workflows and model evaluation.</li>
                     </ul>
                 </div>
                 <div class="panel" id="p-spreri">
-                    <h3>Research Intern <span>@ SPRERI &mdash; Solar Energy Division</span></h3>
+                    <h3>Research Intern <span>@ SPRERI - Solar Energy Division</span></h3>
                     <div class="when">1 Aug 2024 &ndash; 30 Nov 2024 · Vallabh Vidyanagar, Gujarat</div>
                     <div class="sup">Thermal Energy Storage · Nanofluids · Phase Change Materials</div>
                     <ul>
@@ -563,16 +571,12 @@
     <div class="container rv">
         <h2 class="sec-title"><span class="num">05.</span> Publications &amp; Talks</h2>
         <div class="pub">
+            <div class="yr">2025</div>
+            <div><h4>Nutritional Evaluation of Beetroot Dried using Novel Thermal Storage-based Passive Solar Dryers <span class="status">published</span></h4><div class="meta">First author</div></div>
+        </div>
+        <div class="pub">
             <div class="yr">2024</div>
             <div><h4>Design, Implementation, and Performance Assessment of an Ultrasonic-Guided Bluetooth-Controlled Spraying Rover for Vegetable Crop Rows <span class="status">published</span></h4><div class="meta">First author · Journal of AgriSearch (NAAS 4.95)</div></div>
-        </div>
-        <div class="pub">
-            <div class="yr">2024</div>
-            <div><h4>Ultrasonic-Guided Bluetooth-Controlled Spraying Rover for Precision Agriculture <span class="status">published</span></h4><div class="meta">First author · Journal of AgriSearch</div></div>
-        </div>
-        <div class="pub">
-            <div class="yr">&nbsp;</div>
-            <div><h4>Nutritional Evaluation of Beetroot Dried using Novel Thermal Storage-based Passive Solar Dryers <span class="status">published</span></h4><div class="meta">Co-author</div></div>
         </div>
         <div class="pub">
             <div class="yr">talk</div>
@@ -585,8 +589,8 @@
 
         <h3 style="font-size:1.2rem; margin: 60px 0 22px;">Achievements</h3>
         <div class="ach-grid">
-            <div class="ach"><i class="fas fa-trophy"></i><b>Grand Finalist &mdash; ISRO Bharatiya Antariksh Hackathon 2026</b><span>Top 34 of 15,104 teams (1,00,000+ registrations); both registered teams shortlisted; 30-hr Grand Finale at NRSC Hyderabad</span></div>
-            <div class="ach"><i class="fas fa-medal"></i><b>National Finalist &mdash; MoPR AI/ML Hackathon</b><span>Top 38 teams · IIT Tirupati Navavishkar i-Hub · DTM from point clouds &amp; drainage design</span></div>
+            <div class="ach"><i class="fas fa-trophy"></i><b>Grand Finalist - ISRO Bharatiya Antariksh Hackathon 2026</b><span>Top 34 of 15,104 teams (1,00,000+ registrations); both registered teams shortlisted; 30-hr Grand Finale at NRSC Hyderabad</span></div>
+            <div class="ach"><i class="fas fa-medal"></i><b>National Finalist - MoPR AI/ML Hackathon</b><span>Top 38 teams · IIT Tirupati Navavishkar i-Hub · DTM from point clouds &amp; drainage design</span></div>
             <div class="ach"><i class="fas fa-ranking-star"></i><b>GATE 2025 AIR-69 · GATE 2024 AIR-111</b><span>Agricultural Engineering</span></div>
             <div class="ach"><i class="fas fa-graduation-cap"></i><b>ICAR National Talent Scholarship</b><span>PRMO 2020 &amp; NTSE Stage-1 (2019) qualified</span></div>
         </div>
@@ -598,28 +602,28 @@
         <h2 class="sec-title"><span class="num">06.</span> Education &amp; Certifications</h2>
         <div class="edu">
             <div>
-                <div class="edu-item"><span class="yr">2025 &ndash; 2027</span><b>M.Tech, Land &amp; Water Resource Engineering &mdash; CGPA 7.14/10</b><span class="where">Indian Institute of Technology Kharagpur · Agricultural &amp; Food Engineering</span><div class="where" style="font-size:.8rem; margin-top:6px;">Geo-informatics for Land &amp; Water Resources · Climate Change &amp; Water Resources · Statistical &amp; ML Methods in Water Resources · Probabilistic Risk Assessment · AI Applications in Agriculture · Digital Soil Mapping · Surface &amp; Groundwater Hydrology · Water Resources System Analysis</div></div>
-                <div class="edu-item"><span class="yr">2021 &ndash; 2025</span><b>B.Tech, Agricultural Engineering &mdash; CGPA 8.05/10 (I Division with Distinction)</b><span class="where">College of Agricultural Engineering &amp; Technology, Anand Agricultural University, Godhra</span></div>
-                <div class="edu-item"><span class="yr">2021</span><b>Higher Secondary (XII) &mdash; 83.8%</b><span class="where">Bihar School Education Board</span></div>
-                <div class="edu-item"><span class="yr">2019</span><b>Secondary (X) &mdash; 89.4%</b><span class="where">Central Board of Secondary Education</span></div>
+                <div class="edu-item"><span class="yr">2025 &ndash; 2027</span><b>M.Tech, Land &amp; Water Resource Engineering - CGPA 7.14/10</b><span class="where">Indian Institute of Technology Kharagpur · Agricultural &amp; Food Engineering</span><div class="where" style="font-size:.8rem; margin-top:6px;">Geo-informatics for Land &amp; Water Resources · Climate Change &amp; Water Resources · Statistical &amp; ML Methods in Water Resources · Probabilistic Risk Assessment · AI Applications in Agriculture · Digital Soil Mapping · Surface &amp; Groundwater Hydrology · Water Resources System Analysis</div></div>
+                <div class="edu-item"><span class="yr">2021 &ndash; 2025</span><b>B.Tech, Agricultural Engineering - CGPA 8.05/10 (I Division with Distinction)</b><span class="where">College of Agricultural Engineering &amp; Technology, Anand Agricultural University, Godhra</span></div>
+                <div class="edu-item"><span class="yr">2021</span><b>Higher Secondary (XII) - 83.8%</b><span class="where">Bihar School Education Board</span></div>
+                <div class="edu-item"><span class="yr">2019</span><b>Secondary (X) - 89.4%</b><span class="where">Central Board of Secondary Education</span></div>
             </div>
             <div class="cert-group">
                 <h3>// remote sensing &amp; gis</h3>
-                <div class="cert"><span>AI/ML for Geodata Analysis &mdash; IIRS-ISRO</span><span>Aug 2024</span></div>
-                <div class="cert"><span>Remote Sensing &amp; Digital Image Analysis &mdash; IIRS-ISRO</span><span>Oct 2024 · Grade B</span></div>
-                <div class="cert"><span>Professional Certificate in GIS Essentials &mdash; Univ. of Alaska Fairbanks / edX</span><span>Dec 2025</span></div>
+                <div class="cert"><span>AI/ML for Geodata Analysis - IIRS-ISRO</span><span>Aug 2024</span></div>
+                <div class="cert"><span>Remote Sensing &amp; Digital Image Analysis - IIRS-ISRO</span><span>Oct 2024 · Grade B</span></div>
+                <div class="cert"><span>Professional Certificate in GIS Essentials - Univ. of Alaska Fairbanks / edX</span><span>Dec 2025</span></div>
                 <div class="cert"><span>GIS1x Foundations · GIS2x 3D GIS · GIS3x Image Analysis in ArcGIS Pro</span><span>AlaskaX · 2025</span></div>
-                <div class="cert"><span>Winter Training: Remote Sensing &amp; GIS to AI Geospatial Analysis &mdash; India Space Academy</span><span>Jan 2025</span></div>
+                <div class="cert"><span>Winter Training: Remote Sensing &amp; GIS to AI Geospatial Analysis - India Space Academy</span><span>Jan 2025</span></div>
                 <h3>// data science</h3>
-                <div class="cert"><span>What is Data Science? · Tools for Data Science · Data Science Methodology &mdash; IBM / Coursera</span><span>2022</span></div>
-                <div class="cert"><span>Intro &amp; Intermediate Python · Intro to SQL · Understanding Data Engineering &mdash; DataCamp</span><span>2025</span></div>
+                <div class="cert"><span>What is Data Science? · Tools for Data Science · Data Science Methodology - IBM / Coursera</span><span>2022</span></div>
+                <div class="cert"><span>Intro &amp; Intermediate Python · Intro to SQL · Understanding Data Engineering - DataCamp</span><span>2025</span></div>
                 <h3>// internship certificates</h3>
-                <div class="cert"><span>IITM Pune &mdash; Summer Internship, Radar &amp; Satellite Meteorology</span><span>Jul 2026</span></div>
-                <div class="cert"><span>EXPERIQS Pvt. Ltd. &mdash; Research Internship, GeoAI &amp; Climate Risk</span><span>Jul 2026</span></div>
-                <div class="cert"><span>SPRERI &mdash; Solar Energy Division Internship</span><span>Nov 2024</span></div>
-                <div class="cert"><span>Swaraj, Mahindra &amp; Mahindra &mdash; Sales &amp; Service Training</span><span>Jun 2024</span></div>
-                <div class="cert"><span>NERFMTTI Assam &mdash; Farm Machinery Training</span><span>Jun 2023</span></div>
-                <div class="cert"><span>Tata Imagination Challenge 2023 &mdash; Round 1 participation</span><span>2023</span></div>
+                <div class="cert"><span>IITM Pune - Summer Internship, Radar &amp; Satellite Meteorology</span><span>Jul 2026</span></div>
+                <div class="cert"><span>EXPERIQS Pvt. Ltd. - Research Internship, GeoAI &amp; Climate Risk</span><span>Jul 2026</span></div>
+                <div class="cert"><span>SPRERI - Solar Energy Division Internship</span><span>Nov 2024</span></div>
+                <div class="cert"><span>Swaraj, Mahindra &amp; Mahindra - Sales &amp; Service Training</span><span>Jun 2024</span></div>
+                <div class="cert"><span>NERFMTTI Assam - Farm Machinery Training</span><span>Jun 2023</span></div>
+                <div class="cert"><span>Tata Imagination Challenge 2023 - Round 1 participation</span><span>2023</span></div>
             </div>
         </div>
     </div>
