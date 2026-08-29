@@ -120,6 +120,18 @@
         .feature .lnk a { color: var(--text); font-size: 1.15rem; margin-left: 16px; }
         .feature .lnk a:hover { color: var(--accent); }
         .feature:nth-of-type(even) .lnk a { margin: 0 16px 0 0; }
+        .pipe { position:relative; z-index:1; display:flex; flex-direction:column; gap:6px; padding: 28px 26px 44px; width:100%; }
+        .pipe .step { display:flex; align-items:center; gap:12px; font-family: var(--mono); font-size:.74rem; color: var(--text); }
+        .pipe .step .n { color: var(--accent); width: 22px; flex-shrink:0; }
+        .pipe .step .box { background: rgba(100,255,218,.06); border:1px solid rgba(100,255,218,.25); border-radius:4px; padding: 6px 10px; flex:1; }
+        .pipe .step .box small { color: var(--text-2); display:block; font-size:.66rem; margin-top:2px; }
+        .pipe .arrow { color: var(--accent); font-size:.7rem; padding-left: 34px; line-height:.8; }
+        html[data-theme="light"] .pipe .step .box { background: rgba(15,118,110,.06); border-color: rgba(15,118,110,.3); }
+        .feature.nolap .desc, .feature.nolap:nth-of-type(odd) .desc, .feature.nolap:nth-of-type(even) .desc { margin:0; }
+        .feature .visual.tall { max-height:none; }
+        .pipe .step .box { padding: 5px 9px; }
+        .pipe .step .box small { font-size:.62rem; }
+        .pipe { gap:4px; padding: 20px 20px 40px; }
         .award { display:inline-flex; align-items:center; gap:6px; font-family: var(--mono); font-size:.72rem; color:#fbbf24; background: rgba(251,191,36,.12); border:1px solid rgba(251,191,36,.3); padding: 3px 9px; border-radius: 4px; margin-bottom: 10px; }
 
         /* ---- OTHER PROJECTS ---- */
@@ -271,7 +283,7 @@
             <div class="stats">
                 <div class="stat"><b>2&times;</b><span>ISRO BAH 2026 finalist</span></div>
                 <div class="stat"><b>AIR 69</b><span>GATE 2025</span></div>
-                <div class="stat"><b>16+</b><span>AI / GeoAI projects</span></div>
+                <div class="stat"><b>20+</b><span>AI / GeoAI projects</span></div>
                 <div class="stat"><b>2</b><span>first-author papers</span></div>
             </div>
         </div>
@@ -362,8 +374,8 @@
             </div>
         </div>
 
-        <div class="feature rv">
-            <div class="visual"><div class="art" style="background: radial-gradient(circle at 70% 40%, rgba(251,191,36,.25), transparent 55%), linear-gradient(135deg,#1a2238,#0a192f);"></div><span class="cap">Delhi NCR · Landsat / MODIS / ERA5 · NSGA-II</span></div>
+        <div class="feature rv nolap">
+            <div class="visual tall" style="align-items:flex-start;"><div class="pipe"><div class="step"><span class="n">01</span><div class="box">Data ingestion<small>Landsat 8/9 · Sentinel-2 · MODIS LST · ERA5 · GHSL · SRTM · OSM</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">02</span><div class="box">Urban morphology<small>building height · FAR · H/W ratio · sky-view factor · LCZ</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">03</span><div class="box">LST modelling<small>physics-informed Random Forest / XGBoost + bias-corrected NDVI-NDBI slopes</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">04</span><div class="box">Heat stress<small>LST -> air temperature -> UTCI -> vulnerability index</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">05</span><div class="box">Intervention optimisation<small>GA · NSGA-II · Bayesian · InVEST valuation · SOLWEIG shading</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">06</span><div class="box">Dashboard<small>7-page Streamlit app reading outputs/</small></div></div></div><span class="cap">six-phase pipeline · Delhi NCR</span></div>
             <div class="info">
                 <span class="award"><i class="fas fa-trophy"></i> ISRO BAH 2026 Grand Finalist · second team</span>
                 <div class="over">Geospatial ML · Optimisation</div>
@@ -374,8 +386,8 @@
             </div>
         </div>
 
-        <div class="feature rv">
-            <div class="visual"><div class="art" style="background: radial-gradient(circle at 40% 60%, rgba(96,165,250,.25), transparent 55%), linear-gradient(135deg,#112240,#0a192f);"></div><span class="cap">SVAMITVA drone LiDAR · 10 villages · 5 states</span></div>
+        <div class="feature rv nolap">
+            <div class="visual tall" style="align-items:flex-start;"><div class="pipe"><div class="step"><span class="n">01</span><div class="box">Point cloud<small>SVAMITVA drone LiDAR, LAS/LAZ · 1.5B+ points · 10 villages, 5 states</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">02</span><div class="box">DTM generation<small>ground filtering -> 2 m Digital Terrain Model</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">03</span><div class="box">Hydrology<small>flow direction · accumulation · low-lying zones · natural flow paths</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">04</span><div class="box">Hotspot prediction<small>XGBoost + Isolation Forest + Attention U-Net · F1 0.74-0.90, AUC to 0.91</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">05</span><div class="box">Drainage design<small>graph MST network optimisation · IS-code sizing · cost estimate</small></div></div><div class="arrow">&#9660;</div><div class="step"><span class="n">06</span><div class="box">Delivery<small>FastAPI (8 endpoints) · COG / GPKG / KML · dashboard</small></div></div></div><span class="cap">LAS/LAZ -> DTM -> hotspots -> drainage network</span></div>
             <div class="info">
                 <span class="award"><i class="fas fa-trophy"></i> MoPR AI/ML Hackathon · National Finalist (Top 38)</span>
                 <div class="over">Point Clouds · Deep Learning</div>
@@ -383,6 +395,17 @@
                 <div class="desc">Turns <b>1.5B+ LiDAR points</b> into 2 m DTMs, flow paths, waterlogging hotspots and costed drainage networks. XGBoost + Isolation Forest + Attention U-Net (<b>hotspot F1 0.74&ndash;0.90, AUC up to 0.91</b>, cross-village transfer AUC 0.86), MST network optimisation, FastAPI with 8 endpoints, OGC-compliant COG / GPKG / KML outputs. IIT Tirupati Navavishkar i-Hub.</div>
                 <div class="tl"><span>Attention U-Net</span><span>XGBoost</span><span>LiDAR</span><span>FastAPI</span><span>Graph MST</span></div>
                 <div class="lnk"><a href="https://github.com/explolar/drainage_ai_python" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></div>
+            </div>
+        </div>
+
+        <div class="feature rv">
+            <div class="visual"><img src="assets/beas_ahp_hazard.jpg" alt="AHP susceptibility versus HEC-RAS hazard overlay, Beas valley corridor, Kullu"><span class="cap">AHP susceptibility vs HEC-RAS 2D hazard · Beas valley, Kullu</span></div>
+            <div class="info">
+                <div class="over">Hydrologic-Hydraulic Modelling · Multi-hazard</div>
+                <h3>Upper Beas Flood Hazard &amp; Road Disruption</h3>
+                <div class="desc">IMERG-forced HEC-HMS (<b>3,524 km², 75 sub-basins</b>) coupled to 2D HEC-RAS for the July 2023 flood: <b>23.07 km² inundated</b>, 77.6% in the extreme hazard class. An 11-factor AHP susceptibility screen flagged 39.7% of the basin; a road-passability model found <b>322 segments impassable to cars</b> (incl. 23.4 km of NH-3) and 318 to ambulances; +22.3% peak discharge under SSP5-8.5. Validated against BBMB stage records at Bhuntar.</div>
+                <div class="tl"><span>HEC-HMS</span><span>HEC-RAS 2D</span><span>GPM IMERG</span><span>AHP</span><span>arcpy</span></div>
+                <div class="lnk"></div>
             </div>
         </div>
 
@@ -399,7 +422,7 @@
         </div>
 
         <div class="feature rv">
-            <div class="visual"><div class="art" style="background: radial-gradient(circle at 60% 30%, rgba(52,211,153,.25), transparent 55%), linear-gradient(135deg,#0d2137,#0a192f);"></div><span class="cap">FastAPI · Next.js · Cloud Run · Llama 3.3 agent</span></div>
+            <div class="visual"><img src="assets/terrashield_districts.jpg" alt="TerraShield district coverage map: all 482 Indian districts"><span class="cap">482 districts served from the platform geodata layer</span></div>
             <div class="info">
                 <div class="over">Full-stack GeoAI · LLM Agent</div>
                 <h3><a href="https://github.com/explolar/Terra-shield" target="_blank">TerraShield AI - Climate Risk &amp; Resilience Platform</a></h3>
@@ -450,14 +473,7 @@
                 <div class="tl"><span>Earth Engine</span><span>Sentinel-1</span><span>LightGBM</span><span>Streamlit</span></div>
             </div>
 
-            <div class="pcard" data-c="climate research">
-                <div class="top"><i class="fas fa-folder-open"></i><div class="lk"></div></div>
-                <h4>Upper Beas Flood Hazard &amp; Road Disruption</h4>
-                <p>IMERG-forced HEC-HMS (3,524 km², 75 sub-basins) coupled to 2D HEC-RAS for the July 2023 flood: 23.07 km² inundated (77.6% extreme hazard); 11-factor AHP screen; 322 road segments impassable incl. 23.4 km of NH-3; +22.3% peak discharge under SSP5-8.5.</p>
-                <div class="tl"><span>HEC-HMS</span><span>HEC-RAS 2D</span><span>AHP</span><span>arcpy</span></div>
-            </div>
-
-            <div class="pcard" data-c="climate platform">
+                        <div class="pcard" data-c="climate platform">
                 <div class="top"><i class="fas fa-folder-open"></i><div class="lk"><a href="https://github.com/explolar/bihar-risk-atlas" target="_blank"><i class="fab fa-github"></i></a></div></div>
                 <h4><a href="https://github.com/explolar/bihar-risk-atlas" target="_blank">Bihar Hydro-Climatic Risk Atlas</a></h4>
                 <p>Random Forest flood-pressure and groundwater-stress models with a Compound Risk Index for co-occurring hazards; SHAP explainability, time-series analysis and a Streamlit GIS decision-support dashboard.</p>
@@ -487,9 +503,37 @@
 
             <div class="pcard" data-c="research">
                 <div class="top"><i class="fas fa-folder-open"></i><div class="lk"></div></div>
-                <h4>Agri-IoT &amp; Robotics</h4>
-                <p>IoT-based automated fertigation system (40&ndash;55% VWC control, ~38.5% water savings; IEI National Convention) and an ultrasonic-guided, Bluetooth-controlled autonomous spraying rover for vegetable crop rows - published in Journal of AgriSearch.</p>
+                <h4>Agri-IoT &amp; Robotics (B.Tech, AAU)</h4>
+                <p>B.Tech projects at Anand Agricultural University: an Arduino IoT fertigation controller holding 40-55% soil VWC with ~38.5% water savings (presented at IEI National Convention), an ultrasonic-guided Bluetooth spraying rover for vegetable rows (Journal of AgriSearch), and thermal-storage passive solar dryers for beetroot (first-author paper, 2025).</p>
                 <div class="tl"><span>Arduino</span><span>IoT</span><span>Fertigation</span></div>
+            </div>
+
+            <div class="pcard" data-c="genai research">
+                <div class="top"><i class="fas fa-folder-open"></i><div class="lk"><a href="https://github.com/explolar/RankLab" target="_blank"><i class="fab fa-github"></i></a></div></div>
+                <h4><a href="https://github.com/explolar/RankLab" target="_blank">RankLab - E-commerce Search Ranking</a></h4>
+                <p>Offline retrieval + learning-to-rank pipeline on Amazon ESCI (482k products): BM25 vs bge-base dense retrieval with FAISS HNSW (Recall@100 0.500 at 4.5 ms p95, 16.7x faster than exact), LightGBM LambdaMART on 14 features (+18.5% NDCG@10 over BM25), LLM query rewriting and a synthetic A/B experiment simulator.</p>
+                <div class="tl"><span>FAISS</span><span>LambdaMART</span><span>Sentence Transformers</span><span>LLM rewriting</span></div>
+            </div>
+
+            <div class="pcard" data-c="climate eo">
+                <div class="top"><i class="fas fa-folder-open"></i><div class="lk"><a href="https://github.com/explolar/Emergency" target="_blank"><i class="fab fa-github"></i></a></div></div>
+                <h4><a href="https://github.com/explolar/Emergency" target="_blank">GLOF Emergency Routing, Kullu Valley</a></h4>
+                <p>ArcGIS Pro / arcpy workflow for GLOF-prone Beas basin: HAND-based flood inundation and risk zoning, road-segment vulnerability and safe-speed estimation under 1 m flooding, Network Analyst evacuation routing, service-area analysis and optimal emergency-centre location.</p>
+                <div class="tl"><span>arcpy</span><span>HAND</span><span>Network Analyst</span><span>OSM</span></div>
+            </div>
+
+            <div class="pcard" data-c="genai platform">
+                <div class="top"><i class="fas fa-folder-open"></i><div class="lk"><a href="https://github.com/explolar/saath" target="_blank"><i class="fab fa-github"></i></a><a href="https://github.com/explolar/funnyBot" target="_blank" title="Roast Baba"><i class="fas fa-code-branch"></i></a><a href="https://funnybot-ejbm5pzscdp3lu5v7fhuz5.streamlit.app/" target="_blank" title="Live demo"><i class="fas fa-arrow-up-right-from-square"></i></a></div></div>
+                <h4><a href="https://github.com/explolar/saath" target="_blank">Saath &amp; Roast Baba - LLM Apps</a></h4>
+                <p>Two streaming Groq / Llama 3.3 Streamlit apps. <b>Saath</b>: PHQ-9 mental-health check-in with a crisis-aware, multilingual (English / Hinglish / Tanglish / Bhojpuri) empathetic listener that always surfaces Indian helplines. <b>Roast Baba</b>: 9-persona, 6-language roast bot with gTTS voice, live on Streamlit Cloud.</p>
+                <div class="tl"><span>Groq / Llama 3.3</span><span>Streamlit</span><span>Prompt design</span><span>Safety routing</span></div>
+            </div>
+
+            <div class="pcard" data-c="platform research">
+                <div class="top"><i class="fas fa-folder-open"></i><div class="lk"><a href="https://github.com/explolar/Placement_predictor" target="_blank"><i class="fab fa-github"></i></a><a href="https://placementpredictor-irbrr8lqtnarybgk2d84xr.streamlit.app/" target="_blank" title="Live demo"><i class="fas fa-arrow-up-right-from-square"></i></a></div></div>
+                <h4><a href="https://github.com/explolar/Placement_predictor" target="_blank">AI Placement Coach - Counterfactual Engine</a></h4>
+                <p>Random Forest placement predictor plus a genetic-algorithm counterfactual optimiser that evolves a student profile (skills, backlogs, internships) into the smallest realistic change that flips the prediction to placed. Deployed on Streamlit Cloud.</p>
+                <div class="tl"><span>Random Forest</span><span>Genetic Algorithm</span><span>Counterfactuals</span><span>Streamlit</span></div>
             </div>
 
             <div class="pcard" data-c="climate eo">
