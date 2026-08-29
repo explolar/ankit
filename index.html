@@ -328,12 +328,28 @@
 
                 <div class="card project-card" style="border-top: 4px solid var(--danger);">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-                        <h3 style="margin: 0;">VyomJal &mdash; Climate Digital Twin</h3>
+                        <h3 style="margin: 0;">Delhi NCR Urban Heat Island Mitigation</h3>
                         <span style="background: #fee2e2; color: #b91c1c; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; margin-left: 10px;">🏆 ISRO BAH 2026 Finalist</span>
                     </div>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
-                        <strong>AI-powered digital twin of India&rsquo;s climate (Madhya Pradesh pilot, BAH PS-5)</strong><br>
-                        Fuses IMD observations, ERA5/ERA5-Land reanalysis, DEM and land cover at 0.25&deg;; a ConvLSTM encoder&ndash;decoder learns spatio-temporal dynamics and serves 1&ndash;5 day rainfall and Tmax forecasts. Two lineages: PyTorch model (2020&ndash;25) behind a Flask/Plotly what-if scenario dashboard, and an 11-channel TensorFlow model trained on 30 years (1996&ndash;2025) on a GPU cluster. Second finalist team at ISRO&ndash;NRSC.
+                        <strong>Six-phase geospatial AI/ML pipeline for UHI mitigation (second finalist team)</strong><br>
+                        Ingests Landsat, Sentinel-2, MODIS, ERA5, GHSL, SRTM and OpenStreetMap for Delhi NCR; derives urban morphology (building height, FAR, H/W, sky-view factor, LCZ); trains physics-informed Random Forest / XGBoost LST models; maps heat stress (LST &rarr; Ta &rarr; UTCI &rarr; vulnerability); runs GA / NSGA-II / Bayesian multi-objective intervention optimisation with InVEST-style ecosystem-service valuation and SOLWEIG street-canyon shading. Served via a 7-page Streamlit dashboard.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Landsat / MODIS / ERA5</span>
+                        <span class="tech-tag">Physics-informed XGBoost</span>
+                        <span class="tech-tag">NSGA-II</span>
+                        <span class="tech-tag">UTCI</span>
+                        <span class="tech-tag">Streamlit</span>
+                    </div>
+                    <a href="https://github.com/explolar/isro_heat_island" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
+                </div>
+
+                <div class="card project-card" style="border-top: 4px solid var(--primary);">
+                    <h3>VyomJal &mdash; Climate Digital Twin</h3>
+                    <p style="color:var(--text-muted); font-size:0.9rem;">
+                        <strong>AI-powered digital twin of India&rsquo;s climate (Madhya Pradesh pilot)</strong><br>
+                        Fuses IMD observations, ERA5/ERA5-Land reanalysis, DEM and land cover at 0.25&deg;; a ConvLSTM encoder&ndash;decoder learns spatio-temporal dynamics and serves 1&ndash;5 day rainfall and Tmax forecasts. Two lineages: PyTorch model (2020&ndash;25) behind a Flask/Plotly what-if scenario dashboard, and an 11-channel TensorFlow model trained on 30 years (1996&ndash;2025) on a GPU cluster.
                     </p>
                     <div class="tech-stack">
                         <span class="tech-tag">ConvLSTM</span>
@@ -543,7 +559,6 @@
                         <a href="https://github.com/explolar/MOSFETCH" target="_blank">MOSFETCH</a> &mdash; INSAT-3D/3DR/3DS imagery downloader from MOSDAC with resume, retry and rate-limit-aware sequencing.
                         <a href="https://github.com/explolar/WRF_Python_Scripts" target="_blank">WRF_Python_Scripts</a> &mdash; WRF visualisation suite (synoptic/mesoscale, precipitation, fire weather, tropical).
                         <a href="https://github.com/explolar/precip-index" target="_blank">precip-index</a> &mdash; SPI/SPEI drought indices.
-                        <a href="https://github.com/explolar/isro_heat_island" target="_blank">isro_heat_island</a> &mdash; urban heat-island analysis.
                         <a href="https://github.com/explolar/vyomjal" target="_blank">vyomjal</a>,
                         <a href="https://github.com/explolar/Climate_Change---Classification" target="_blank">climate trend analysis</a> (Mann-Kendall, turning-point tests).
                     </p>
