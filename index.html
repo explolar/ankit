@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankit Kumar | Portfolio</title>
+    <title>Ankit Kumar | AI/ML for Earth Systems</title>
+    <meta name="description" content="Ankit Kumar — AI/ML & deep learning engineer specialising in Earth systems: satellite meteorology, GeoAI, generative AI, climate risk. IIT Kharagpur.">
+    <meta name="theme-color" content="#0a66c2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -219,6 +221,94 @@
             .btn-group { justify-content: center; }
             .nav-links { display: none; }
         }
+
+        /* ===== MODERN OVERRIDES ===== */
+        :root {
+            --bg-alt: #ffffff;
+            --card-bg: rgba(255,255,255,0.85);
+            --border: #e5e7eb;
+            --text-soft: #555;
+            --text-faint: #777;
+            --tag-bg: #e0f2fe; --tag-fg: #0369a1;
+            --badge-bg: #dbeafe; --badge-fg: #1e40af;
+            --hero-a: #ffffff; --hero-b: #eef2ff; --hero-c: #f0fdf4;
+        }
+        html[data-theme="dark"] {
+            --bg-body: #0b1120;
+            --bg-alt: #0f172a;
+            --card-bg: rgba(30,41,59,0.75);
+            --glass-bg: rgba(30,41,59,0.75);
+            --glass-border: rgba(255,255,255,0.08);
+            --border: #1f2937;
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            --text-soft: #cbd5e1;
+            --text-faint: #94a3b8;
+            --tag-bg: rgba(14,165,233,0.15); --tag-fg: #7dd3fc;
+            --badge-bg: rgba(59,130,246,0.18); --badge-fg: #93c5fd;
+            --hero-a: #0b1120; --hero-b: #111c3a; --hero-c: #0d1f1a;
+            --shadow-card: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -1px rgba(0,0,0,0.3);
+            --shadow-hover: 0 20px 25px -5px rgba(0,0,0,0.5), 0 10px 10px -5px rgba(0,0,0,0.4);
+        }
+        body { transition: background-color .3s, color .3s; }
+        header { background: linear-gradient(-45deg, var(--hero-a), var(--hero-b), var(--hero-c), var(--hero-a)); background-size: 400% 400%; }
+        .blob { position:absolute; border-radius:50%; filter: blur(80px); opacity:.45; pointer-events:none; z-index:0; }
+        .blob-1 { width:420px; height:420px; background:#60a5fa; top:-120px; right:-80px; animation: float 14s ease-in-out infinite; }
+        .blob-2 { width:340px; height:340px; background:#34d399; bottom:-140px; left:-60px; animation: float 18s ease-in-out infinite reverse; }
+        @keyframes float { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-30px) scale(1.06)} }
+        html[data-theme="dark"] .blob { opacity:.22; }
+
+        .navbar { background: color-mix(in srgb, var(--bg-alt) 75%, transparent); border-bottom: 1px solid var(--border); }
+        .nav-right { display:flex; align-items:center; gap:18px; }
+        .icon-btn { background: transparent; border: 1px solid var(--border); color: var(--text-muted); width: 38px; height: 38px; border-radius: 10px; cursor: pointer; display:inline-flex; align-items:center; justify-content:center; font-size: 1rem; transition: all .2s; }
+        .icon-btn:hover { color: var(--primary); border-color: var(--primary); }
+        #menu-btn { display:none; }
+        .nav-links.open { display:flex; flex-direction:column; position:absolute; top:100%; left:0; right:0; background: var(--bg-alt); border-bottom:1px solid var(--border); padding: 16px 20px; gap: 14px; }
+        .navbar { position: sticky; }
+
+        .section-alt { background: var(--bg-alt); }
+        .card { background: var(--card-bg); border-color: var(--glass-border); }
+        .cert-item { background: var(--card-bg); border-color: var(--border); }
+        .tech-tag { background: var(--tag-bg); color: var(--tag-fg); }
+        a.tech-tag { text-decoration:none; transition: all .2s; }
+        a.tech-tag:hover { background: var(--primary); color: #fff; }
+        .time-badge { background: var(--badge-bg); color: var(--badge-fg); }
+        .timeline-item { border-left-color: var(--border); }
+        .timeline-dot { background: var(--bg-alt); }
+        .pub-icon { background: var(--tag-bg) !important; color: var(--tag-fg) !important; }
+        .pub-icon.green { background: rgba(16,185,129,0.15) !important; color: #34d399 !important; }
+        .hero-content h1 { font-size: 3.4rem; letter-spacing: -1px; }
+        .section-title { font-size: 2.1rem; letter-spacing: -0.5px; }
+        .section-title::after { background: linear-gradient(90deg, var(--primary), var(--secondary)); width: 50%; }
+        .project-card, .cert-item, .card { border-radius: 18px; }
+        .project-card p { line-height: 1.65; }
+        .skill-list li span { line-height: 1.5; }
+
+        /* stat strip */
+        .stats { display:grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap:14px; margin-top: 34px; max-width: 700px; }
+        .stat { background: var(--card-bg); border:1px solid var(--glass-border); border-radius:14px; padding:14px 16px; backdrop-filter: blur(6px); }
+        .stat b { display:block; font-size:1.5rem; font-weight:800; color: var(--primary); line-height:1.1; }
+        .stat span { font-size:.78rem; color: var(--text-muted); font-weight:600; text-transform: uppercase; letter-spacing:.4px; }
+
+        /* filters */
+        .filters { display:flex; flex-wrap:wrap; gap:10px; margin: -10px 0 30px; }
+        .chip { border:1px solid var(--border); background: var(--card-bg); color: var(--text-muted); padding:7px 16px; border-radius:999px; font-size:.85rem; font-weight:600; cursor:pointer; transition: all .2s; }
+        .chip:hover, .chip.active { background: var(--primary); color:#fff; border-color: var(--primary); }
+        .project-card.filtered-out { display:none; }
+
+        /* back to top */
+        #to-top { position:fixed; right:22px; bottom:22px; width:44px; height:44px; border-radius:50%; background: var(--primary); color:#fff; border:none; box-shadow: 0 8px 20px rgba(10,102,194,.35); cursor:pointer; opacity:0; pointer-events:none; transition: all .3s; z-index:1500; }
+        #to-top.visible { opacity:1; pointer-events:auto; }
+        #to-top:hover { transform: translateY(-3px); }
+
+        ::selection { background: var(--primary); color:#fff; }
+        @media (max-width: 768px) {
+            #menu-btn { display:inline-flex; }
+            .hero-content h1 { font-size: 2.4rem; }
+            .stats { grid-template-columns: repeat(2,1fr); }
+            .blob { display:none; }
+        }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
     </style>
 </head>
 <body>
@@ -235,11 +325,17 @@
                 <a href="#research" class="nav-link">Research</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+            </div>
+            <div class="nav-right">
+                <button id="theme-btn" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme"><i class="fas fa-moon"></i></button>
+                <button id="menu-btn" class="icon-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </nav>
 
     <header id="about">
+        <div class="blob blob-1"></div><div class="blob blob-2"></div>
         <div class="container hero-grid">
             <div class="profile-wrapper">
                 <img src="Profile_Photo.png" alt="Ankit Kumar" class="profile-img">
@@ -262,6 +358,12 @@
                         <a href="https://github.com/explolar" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
                         <a href="mailto:ankit_200325@kgpian.iitkgp.ac.in" class="social-icon"><i class="fas fa-envelope"></i></a>
                     </div>
+                </div>
+                <div class="stats">
+                    <div class="stat"><b>2&times;</b><span>ISRO BAH 2026 Finalist</span></div>
+                    <div class="stat"><b>AIR 69</b><span>GATE 2025</span></div>
+                    <div class="stat"><b>17+</b><span>AI / GeoAI Projects</span></div>
+                    <div class="stat"><b>3</b><span>Published Papers</span></div>
                 </div>
             </div>
         </div>
@@ -330,12 +432,22 @@
         </div>
     </section>
 
-    <section id="projects" style="background: white;">
+    <section id="projects" class="section-alt">
         <div class="container hidden">
             <h2 class="section-title">Featured Projects</h2>
+            <div class="filters">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="hackathon">🏆 Hackathon Finalists</button>
+                <button class="chip" data-filter="genai">Generative AI &amp; Agents</button>
+                <button class="chip" data-filter="dl">Deep Learning</button>
+                <button class="chip" data-filter="eo">Earth Observation</button>
+                <button class="chip" data-filter="climate">Weather &amp; Climate</button>
+                <button class="chip" data-filter="platform">Deployed Platforms</button>
+                <button class="chip" data-filter="research">Research</button>
+            </div>
             <div class="project-grid">
 
-                <div class="card project-card" style="border-top: 4px solid var(--danger);">
+                <div class="card project-card" data-cat="hackathon genai eo" style="border-top: 4px solid var(--danger);">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                         <h3 style="margin: 0;">NIRMEGH &mdash; Cloud Removal</h3>
                         <span style="background: #fee2e2; color: #b91c1c; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; margin-left: 10px;">🏆 ISRO BAH 2026 Finalist</span>
@@ -354,7 +466,7 @@
                     <a href="https://github.com/explolar/NIRMRGH" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--danger);">
+                <div class="card project-card" data-cat="hackathon eo climate" style="border-top: 4px solid var(--danger);">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                         <h3 style="margin: 0;">Delhi NCR Urban Heat Island Mitigation</h3>
                         <span style="background: #fee2e2; color: #b91c1c; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; margin-left: 10px;">🏆 ISRO BAH 2026 Finalist</span>
@@ -373,7 +485,7 @@
                     <a href="https://github.com/explolar/isro_heat_island" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--primary);">
+                <div class="card project-card" data-cat="climate dl" style="border-top: 4px solid var(--primary);">
                     <h3>VyomJal &mdash; Climate Digital Twin</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
                         <strong>AI-powered digital twin of India&rsquo;s climate (Madhya Pradesh pilot)</strong><br>
@@ -389,7 +501,7 @@
                     <a href="https://github.com/explolar/vyomjal" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--danger);">
+                <div class="card project-card" data-cat="hackathon eo dl" style="border-top: 4px solid var(--danger);">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                         <h3 style="margin: 0;">Drainage Mitra</h3>
                         <span style="background: #fee2e2; color: #b91c1c; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; margin-left: 10px;">🏆 MoPR National Finalist</span>
@@ -407,7 +519,7 @@
                     <a href="https://github.com/explolar/drainage_ai_python" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--accent);">
+                <div class="card project-card" data-cat="genai" style="border-top: 4px solid var(--accent);">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                         <h3 style="margin: 0;">Parishkar &mdash; LLM Software-Engineering Agent</h3>
                         <span style="background: #fef3c7; color: #b45309; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; margin-left: 10px;">🤖 GenAI</span>
@@ -426,7 +538,7 @@
                     </div>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--primary);">
+                <div class="card project-card" data-cat="climate research" style="border-top: 4px solid var(--primary);">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                         <h3 style="margin: 0;">WRF + ML Precipitation Bias Correction</h3>
                         <span style="background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; white-space: nowrap; margin-left: 10px;">🎓 M.Tech Thesis</span>
@@ -444,7 +556,7 @@
                     </div>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--primary);">
+                <div class="card project-card" data-cat="genai platform climate" style="border-top: 4px solid var(--primary);">
                     <h3>TerraShield AI</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
                         <strong>Climate Risk &amp; Resilience Platform</strong><br>
@@ -461,7 +573,7 @@
                     <a href="https://github.com/explolar/Terra-shield" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--secondary);">
+                <div class="card project-card" data-cat="platform eo dl" style="border-top: 4px solid var(--secondary);">
                     <h3>TerrAI &mdash; Soil Intelligence</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
                         <strong>GeoAI soil-property prediction platform</strong><br>
@@ -476,7 +588,7 @@
                     <a href="https://github.com/explolar/soil_prop" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--accent);">
+                <div class="card project-card" data-cat="platform eo" style="border-top: 4px solid var(--accent);">
                     <h3>HydroRisk Atlas &amp; FluviaLens</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
                         <strong>Flood Risk Intelligence (deployed on Google Cloud Run)</strong><br>
@@ -494,7 +606,7 @@
                     </div>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--accent);">
+                <div class="card project-card" data-cat="climate research" style="border-top: 4px solid var(--accent);">
                     <h3>Upper Beas Flood Hazard &amp; Road Disruption</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
                         <strong>Coupled hydrologic&ndash;hydraulic modelling of the July 2023 flood</strong><br>
@@ -509,7 +621,7 @@
                     </div>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--accent);">
+                <div class="card project-card" data-cat="platform climate" style="border-top: 4px solid var(--accent);">
                     <h3>Bihar Hydro-Climatic Risk Atlas</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
                         <strong>Flood &amp; Groundwater Risk Decision Support System</strong><br>
@@ -524,7 +636,7 @@
                     <a href="https://github.com/explolar/bihar-risk-atlas" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--primary);">
+                <div class="card project-card" data-cat="eo research dl" style="border-top: 4px solid var(--primary);">
                     <h3>CASim-ANN &mdash; Land-Use Simulation</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
                         <strong>Cellular Automata&ndash;ANN LULC modelling &amp; multi-cast validation</strong><br>
@@ -539,7 +651,7 @@
                     <a href="https://github.com/explolar/CASim-ANN" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--secondary);">
+                <div class="card project-card" data-cat="eo" style="border-top: 4px solid var(--secondary);">
                     <h3>AI Forest Change Detection</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
                         <strong>Live deforestation / regrowth mapping app</strong><br>
@@ -553,7 +665,7 @@
                     <a href="https://github.com/explolar/Ai_forestDetection" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--secondary);">
+                <div class="card project-card" data-cat="dl eo" style="border-top: 4px solid var(--secondary);">
                     <h3>CNN for Flood Prediction &mdash; Teaching Platform</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
                         <strong>Interactive Streamlit course on SAR-based flood detection</strong><br>
@@ -567,7 +679,7 @@
                     <a href="https://github.com/explolar/Cnn_tutorial" target="_blank" class="tech-tag" style="display:inline-block; margin-top:12px;"><i class="fab fa-github"></i> Repository</a>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--accent);">
+                <div class="card project-card" data-cat="research" style="border-top: 4px solid var(--accent);">
                     <h3>Agri-IoT &amp; Robotics</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
                         <strong>Precision-agriculture hardware</strong><br>
@@ -580,7 +692,7 @@
                     </div>
                 </div>
 
-                <div class="card project-card" style="border-top: 4px solid var(--text-muted);">
+                <div class="card project-card" data-cat="climate" style="border-top: 4px solid var(--text-muted);">
                     <h3>Open-Source Tools</h3>
                     <p style="color:var(--text-muted); font-size:0.9rem;">
                         <strong>Weather, climate &amp; EO utilities</strong><br>
@@ -609,7 +721,7 @@
                 <h3 style="margin-bottom: 20px; font-size: 1.4rem;">Published (first author)</h3>
 
                 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
-                    <div style="background: #dcfce7; color: var(--secondary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-scroll" style="font-size: 1.2rem;"></i></div>
+                    <div class="pub-icon green" style="width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-scroll" style="font-size: 1.2rem;"></i></div>
                     <div>
                         <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary-dark);">Design, Implementation, and Performance Assessment of an Ultrasonic-Guided Bluetooth-Controlled Spraying Rover for Vegetable Crop Rows</h4>
                         <div style="color: var(--text-muted); font-size: 0.9rem;">Journal of AgriSearch (NAAS 4.95) &mdash; published</div>
@@ -617,7 +729,7 @@
                 </div>
 
                 <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
-                    <div style="background: #dcfce7; color: var(--secondary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-scroll" style="font-size: 1.2rem;"></i></div>
+                    <div class="pub-icon green" style="width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-scroll" style="font-size: 1.2rem;"></i></div>
                     <div>
                         <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary-dark);">Ultrasonic-Guided Bluetooth-Controlled Spraying Rover for Precision Agriculture</h4>
                         <div style="color: var(--text-muted); font-size: 0.9rem;">Journal of AgriSearch &mdash; published 2024</div>
@@ -625,7 +737,7 @@
                 </div>
 
                 <div style="display: flex; gap: 20px; align-items: flex-start;">
-                    <div style="background: #dcfce7; color: var(--secondary); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-scroll" style="font-size: 1.2rem;"></i></div>
+                    <div class="pub-icon green" style="width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fas fa-scroll" style="font-size: 1.2rem;"></i></div>
                     <div>
                         <h4 style="margin: 0; font-size: 1.1rem; color: var(--primary-dark);">Nutritional Evaluation of Beetroot Dried using Novel Thermal Storage-based Passive Solar Dryers</h4>
                         <div style="color: var(--text-muted); font-size: 0.9rem;">Published</div>
@@ -643,7 +755,7 @@
         </div>
     </section>
 
-    <section id="experience" style="background: white;">
+    <section id="experience" class="section-alt">
         <div class="container hidden">
             <h2 class="section-title">Professional Experience</h2>
             <div class="card">
@@ -654,7 +766,7 @@
                     <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Research Intern &mdash; Radar &amp; Satellite Meteorology, Deep Learning</h3>
                     <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Indian Institute of Tropical Meteorology (IITM), Ministry of Earth Sciences | Pune &mdash; Supervisor: Dr. Amita Prabhu, Scientist-F, Atmospheric Research Testbed</div>
                     <div style="font-size:0.85rem; color: var(--primary); font-weight:600; margin-bottom:8px;">Deep Learning · Satellite Data Pipelines · Statistical Modelling · HPC · 3 research projects</div>
-                    <ul style="font-size: 0.95rem; color: #555; padding-left: 20px; margin: 0;">
+                    <ul style="font-size: 0.95rem; color: var(--text-soft); padding-left: 20px; margin: 0;">
                         <li style="margin-bottom:6px;"><strong>Satellite-to-radar retrieval:</strong> mapped 9-channel INSAT-3DR geostationary imagery to radar composite reflectivity (CREF) over a 440 km monsoon-core domain (ART-Bhopal C-Pol radar) across 4 monsoon seasons.</li>
                         <li style="margin-bottom:6px;"><strong>Architecture benchmark:</strong> trained and compared U-Net, GAN-refined and Transformer models under one pipeline (PyTorch / TensorFlow) &mdash; spatial-context models explained 77&ndash;78% of reflectivity variance vs 24% for tuned pixelwise fits; GAN-refined model improved convective-core CSI by 8.6% and cut false alarms by 13.7%.</li>
                         <li style="margin-bottom:6px;"><strong>Physics-informed retrieval:</strong> designed a differentiable categorical loss reaching CSI@35 = 0.46 at POD = 0.65; ablation showed loss design mattered 39&times; more than 12 added physics channels.</li>
@@ -670,7 +782,7 @@
                     <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Research Intern &mdash; GeoAI &amp; Climate Risk</h3>
                     <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">EXPERIQS Private Limited (IIT Bombay-based GeoAI startup) | Hybrid</div>
                     <div style="font-size:0.85rem; color: var(--primary); font-weight:600; margin-bottom:8px;">GeoAI · Soil Property Prediction · Physical Climate Risk · Hydrological Modelling</div>
-                    <ul style="font-size: 0.95rem; color: #555; padding-left: 20px; margin: 0;">
+                    <ul style="font-size: 0.95rem; color: var(--text-soft); padding-left: 20px; margin: 0;">
                         <li style="margin-bottom:6px;"><strong>Physical Climate Risk Assessment:</strong> delivered a site-level, CII PCRAF / TCFD-aligned assessment for a 225,000 m² Godrej &amp; Boyce plant &mdash; hazard &times; exposure &times; vulnerability modelling of flood, heat, drought and landslide; 2.25% value-at-risk (₹7.2 Cr of ₹319 Cr net block), expected annual loss ₹35 L&ndash;3.5 Cr, 1-in-100-yr PML ₹1.8 Cr, 74.8% adaptive-capacity index.</li>
                         <li style="margin-bottom:6px;"><strong>Flood susceptibility ML:</strong> built a 13-factor raster-stack classifier (70/30 split); benchmarked Random Forest vs Logistic Regression and SVM, selecting RF (AUC 0.907 vs 0.79 / 0.67, OOB accuracy 0.848).</li>
                         <li style="margin-bottom:6px;"><strong>Landslide susceptibility ML:</strong> trained LightGBM with 11-fold leave-one-taluka-out spatial CV &mdash; AUC-ROC 0.946 (spatial CV 0.951 &plusmn; 0.039, n = 109), feeding the business-loss estimate.</li>
@@ -681,25 +793,11 @@
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <span class="time-badge">Mar 2026 - Present</span>
-                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Consultant</h3>
-                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">APDIGI</div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <span class="time-badge">Jan 2026 - Present</span>
-                    <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">PG Representative</h3>
-                    <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Entrepreneurship Cell, IIT Kharagpur</div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
                     <span class="time-badge">1 Aug 2024 - 30 Nov 2024</span>
                     <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Research Intern &mdash; Solar Energy Division</h3>
                     <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Sardar Patel Renewable Energy Research Institute (SPRERI) | Vallabh Vidyanagar, Gujarat</div>
                     <div style="font-size:0.85rem; color: var(--primary); font-weight:600; margin-bottom:8px;">Thermal Energy Storage · Nanofluids · DSC · Solar Thermal</div>
-                    <ul style="font-size: 0.95rem; color: #555; padding-left: 20px; margin: 0;">
+                    <ul style="font-size: 0.95rem; color: var(--text-soft); padding-left: 20px; margin: 0;">
                         <li style="margin-bottom:6px;">Developed nano-based Phase Change Materials (PCMs) and nanofluids for cooking and solar thermal energy storage applications.</li>
                         <li style="margin-bottom:6px;">Time-series thermal analysis of nanofluids identified 10% nanoparticle concentration as optimal; DSC analysis of NaNO₃/KNO₂ salt mixtures identified a 60:40 ratio (92.79 J/g latent heat).</li>
                         <li style="margin-bottom:6px;">Operated Differential Scanning Calorimetry (DSC), spectrophotometers, ultra-sonicator and temperature calibrator; evaluated thermal / optical properties.</li>
@@ -713,7 +811,7 @@
                     <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Summer Intern &mdash; Sales &amp; Service</h3>
                     <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Swaraj Division, Mahindra &amp; Mahindra Ltd. | Deoghar, Dumka, Sahebganj &amp; Pakur, Jharkhand</div>
                     <div style="font-size:0.85rem; color: var(--primary); font-weight:600; margin-bottom:8px;">Market Analytics · Dealer Management · Agri-Machinery</div>
-                    <ul style="font-size: 0.95rem; color: #555; padding-left: 20px; margin: 0;">
+                    <ul style="font-size: 0.95rem; color: var(--text-soft); padding-left: 20px; margin: 0;">
                         <li style="margin-bottom:6px;">One-month full-time training under Dy. Manager (Training in charge): tractor industry in India &amp; Jharkhand, product segment analysis, dealer management system, enquiry analysis.</li>
                         <li style="margin-bottom:6px;">Data-driven market segmentation and dealer / after-sales analytics; fund analysis and financial &amp; operational performance of tractor sales and service operations.</li>
                     </ul>
@@ -724,7 +822,7 @@
                     <span class="time-badge">Jun 2023</span>
                     <h3 style="margin:5px 0 5px 0; font-size: 1.15rem;">Trainee &mdash; Farm Machinery</h3>
                     <div style="font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">North Eastern Region Farm Machinery Training &amp; Testing Institute (NERFMTTI) | Sonitpur, Assam</div>
-                    <ul style="font-size: 0.95rem; color: #555; padding-left: 20px; margin: 0;">
+                    <ul style="font-size: 0.95rem; color: var(--text-soft); padding-left: 20px; margin: 0;">
                         <li style="margin-bottom:6px;">Hands-on operation, testing, maintenance and repair of tractors, ploughs, seeders and harvesters; field safety protocols.</li>
                     </ul>
                 </div>
@@ -767,7 +865,7 @@
         </div>
     </section>
 
-    <section id="education" style="background: white;">
+    <section id="education" class="section-alt">
         <div class="container hidden">
             <h2 class="section-title">Education</h2>
             <div class="card">
@@ -775,26 +873,26 @@
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Jun 2025 - Jun 2027</span>
                     <h3 style="margin:5px 0; font-size: 1.15rem;">M.Tech, Land and Water Resource Engineering &mdash; CGPA 7.14/10</h3>
-                    <div style="font-style:italic; color:#777;">Indian Institute of Technology, Kharagpur &mdash; Agricultural &amp; Food Engineering</div>
+                    <div style="font-style:italic; color:var(--text-faint);">Indian Institute of Technology, Kharagpur &mdash; Agricultural &amp; Food Engineering</div>
                     <div style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">Coursework: Geo-informatics for Land &amp; Water Resources · Climate Change &amp; Water Resources · Statistical &amp; ML Methods in Water Resources Engg. · Probabilistic Risk Assessment · AI Applications in Agriculture · Digital Soil Mapping · Surface Water Hydrology · Advanced Groundwater Hydrology · Water Resources System Analysis · On-Farm Water Management</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">Jun 2021 - Jun 2025</span>
                     <h3 style="margin:5px 0; font-size: 1.15rem;">B.Tech, Agricultural Engineering &mdash; CGPA 8.05/10</h3>
-                    <div style="font-style:italic; color:#777;">College of Agricultural Engineering &amp; Technology, Anand Agricultural University, Godhra, Gujarat</div>
+                    <div style="font-style:italic; color:var(--text-faint);">College of Agricultural Engineering &amp; Technology, Anand Agricultural University, Godhra, Gujarat</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">2021</span>
                     <h3 style="margin:5px 0; font-size: 1.15rem;">Higher Secondary (Class XII) &mdash; 83.8%</h3>
-                    <div style="font-style:italic; color:#777;">Bihar School Education Board</div>
+                    <div style="font-style:italic; color:var(--text-faint);">Bihar School Education Board</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <span class="time-badge">2019</span>
                     <h3 style="margin:5px 0; font-size: 1.15rem;">Secondary (Class X) &mdash; 89.4%</h3>
-                    <div style="font-style:italic; color:#777;">Central Board of Secondary Education</div>
+                    <div style="font-style:italic; color:var(--text-faint);">Central Board of Secondary Education</div>
                 </div>
             </div>
         </div>
@@ -946,6 +1044,8 @@
         </div>
     </footer>
 
+    <button id="to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
     <script>
         // 1. Scroll Progress Bar
         window.onscroll = function() {
@@ -1010,6 +1110,38 @@
 
         // 4. Auto Year
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        // 5. Theme toggle
+        (function(){
+            const root=document.documentElement, btn=document.getElementById('theme-btn'), icon=btn.querySelector('i');
+            let t; try{ t=localStorage.getItem('theme'); }catch(e){}
+            if(!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light';
+            const apply=v=>{ root.setAttribute('data-theme',v); icon.className = v==='dark'?'fas fa-sun':'fas fa-moon'; };
+            apply(t);
+            btn.addEventListener('click',()=>{ t = t==='dark'?'light':'dark'; apply(t); try{localStorage.setItem('theme',t);}catch(e){} });
+        })();
+
+        // 6. Mobile menu
+        const menuBtn=document.getElementById('menu-btn'), navLinks=document.querySelector('.nav-links');
+        menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+        navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+        // 7. Project filters
+        document.querySelectorAll('.chip').forEach(chip=>chip.addEventListener('click',()=>{
+            document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+            chip.classList.add('active');
+            const f=chip.dataset.filter;
+            document.querySelectorAll('.project-card').forEach(card=>{
+                const cats=(card.dataset.cat||'').split(' ');
+                card.classList.toggle('filtered-out', f!=='all' && !cats.includes(f));
+            });
+        }));
+
+        // 8. Back to top
+        const toTop=document.getElementById('to-top');
+        window.addEventListener('scroll',()=>toTop.classList.toggle('visible', window.scrollY>600));
+        toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
     </script>
 
 </body>
